@@ -1,6 +1,6 @@
 import * as React from "react"
 import { PageLayout } from "../components"
-import { IntroSection } from "./styles"
+import { IntroSection } from "../styles/indexStyles"
 
 const IndexPage = () => (
   <PageLayout>
@@ -11,8 +11,7 @@ const IndexPage = () => (
           <div>Stephen Ng’ang’a</div>
         </div>
         <div>
-          I’m an <span>Engineer</span>.
-          I build things that solve problems.
+          I’m an <span>Engineer</span>. I build things that solve problems.
         </div>
       </div>
     </IntroSection>
