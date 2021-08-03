@@ -6,5 +6,5 @@ height:6rem;
 display:flex;
 justify-content:flex-end;
 align-items:center;
-padding:0 2rem;
+padding:0 4rem;
 `;

@@ -7,7 +7,7 @@ export default createGlobalStyle`
   box-sizing:border-box;
 }
 body{
-  font-family: 'Hahmlet', serif;
+  font-family: 'Roboto', sans-serif;
 }
 button{
   cursor:pointer;
