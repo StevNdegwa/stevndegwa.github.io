@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useState } from "react"
 import { FaBars, FaGithub } from "react-icons/fa"
-import { IconButton, IconLink } from "../../atoms"
+import { IconButton, IconLink } from "../../atoms";
 import { HeaderWrapper } from "./styles"
 import Menu from "../Menu"
 

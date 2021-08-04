@@ -1,19 +1,21 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+import { ThemeType } from "../styles";
 
 export const IntroSection = styled.section`
+${({ theme }: { theme: ThemeType }) => css`
   width: 100%;
-  height: 300px;
-  position: relative;
+  height: 600px;
+  display: grid;
+  grid-template-columns: 1fr 340px 10%;
+  grid-template-rows: 1fr 300px 300px;
   & > div {
-    width: 340px;
+    grid-column: 2 /span 1;
+    grid-row: 2 /span 1;
     display: flex;
-    position: absolute;
-    right: 20px;
-    top: 50px;
     & > div {
       padding: 0.5rem;
+      width: 230px;
       &:first-of-type {
-        width: 230px;
         text-align: right;
         & > div {
           &:first-of-type {
@@ -40,11 +42,11 @@ export const IntroSection = styled.section`
       }
     }
   }
-  @media only screen and (min-width: 641px) and (max-width: 768px) {
-    & > div {
+  @media only screen and (min-width: ${theme.phoneBreakdown}) and (max-width: ${theme.tabletBreakdown1}) {
+  grid-template-columns: 1fr 390px 15%;
+  height:650px;  
+  & > div {
       width: 390px;
-      right: 100px;
-      top: 70px;
       & > div {
         &:first-of-type {
           width: 270px;
@@ -60,11 +62,11 @@ export const IntroSection = styled.section`
       }
     }
   }
-  @media only screen and (min-width: 769px) and (max-width: 1280px) {
-    & > div {
+  @media only screen and (min-width: ${theme.tabletBreakdown1}) and (max-width: ${theme.tabletBreakdown2}) {
+  grid-template-columns: 1fr 450px 18%;
+  height:680px;  
+  & > div {
       width: 450px;
-      right: 200px;
-      top: 70px;
       & > div {
         &:first-of-type {
           width: 320px;
@@ -81,11 +83,11 @@ export const IntroSection = styled.section`
     }
   }
 
-  @media only screen and (min-width: 1281px) {
-    & > div {
+  @media only screen and (min-width: ${theme.tabletBreakdown2}) {
+  grid-template-columns: 1fr 470px 20%;
+  height:720px;  
+  & > div {
       width: 470px;
-      right: 300px;
-      top: 70px;
       & > div {
         &:first-of-type {
           width: 350px;
@@ -102,3 +104,28 @@ export const IntroSection = styled.section`
     }
   }
 `
+  }`;
+
+export const AboutMeSection = styled.section`
+width:100%;
+overflow:hidden;
+height:400px;
+position:relative;
+`;
+
+export const TiltedBg = styled.div`
+${({ theme }: { theme: ThemeType }) => css`
+position:absolute;
+width:160%;
+height:100%;
+top:30%;
+left:-10px;
+background-color:${theme.colors.secondary[400]};
+transform: rotate(-4deg);
+`}
+`;
+
+
+export const ContactMeSection = styled.section`
+height:400px;
+`;

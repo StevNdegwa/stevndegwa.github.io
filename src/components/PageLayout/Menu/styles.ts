@@ -1,26 +1,34 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
+import { ThemeType } from "../../../styles";
 
 export const MenuWrapper = styled(motion.nav)`
+${({ theme }: { theme: ThemeType }) => css`
 height:0px;
 overflow:hidden;
 width:100%;
 position:absolute;
 top:0;
 left:0;
-z-index:1000;
+z-index:${theme.zIndices.popover};
 background-color:white;
 font-family: 'Merienda', cursive;
 border-bottom: 1px solid hsla(200, 16%, 62%, 1);
 box-shadow:0px 3px 4px hsla(204, 15%, 94%, 1);
+`}
 `;
 
 export const MenuHeader = styled.header`
+${({ theme }: { theme: ThemeType }) => css`
 height:6rem;
 display:flex;
 justify-content:flex-end;
 align-items:center;
-padding:0 4rem;
+padding:0 1rem;
+@media only screen and (min-width: ${theme.phoneBreakdown}){
+  padding: 0 2rem;
+}
+`}
 `;
 
 export const MenuLinks = styled.main`

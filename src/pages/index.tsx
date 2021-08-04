@@ -1,6 +1,11 @@
 import * as React from "react"
 import { PageLayout } from "../components"
-import { IntroSection } from "../styles/indexStyles"
+import {
+  IntroSection,
+  AboutMeSection,
+  TiltedBg,
+  ContactMeSection,
+} from "../styles/indexStyles"
 
 const IndexPage = () => (
   <PageLayout>
@@ -15,6 +20,12 @@ const IndexPage = () => (
         </div>
       </div>
     </IntroSection>
+    <AboutMeSection>
+      <TiltedBg></TiltedBg>
+    </AboutMeSection>
+    <ContactMeSection>
+
+    </ContactMeSection>
   </PageLayout>
 )
 
