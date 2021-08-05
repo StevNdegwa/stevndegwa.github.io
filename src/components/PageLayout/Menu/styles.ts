@@ -5,14 +5,16 @@ import { ThemeType } from "../../../styles";
 export const MenuWrapper = styled(motion.nav)`
 ${({ theme }: { theme: ThemeType }) => css`
 height:0px;
+max-height:100vh;
 overflow:hidden;
 width:100%;
-position:absolute;
+position:fixed;
 top:0;
 left:0;
 z-index:${theme.zIndices.popover};
 background-color:white;
 font-family: 'Merienda', cursive;
+border-top: 1rem solid hsla(210, 29%, 24%, 100%);
 border-bottom: 1px solid hsla(200, 16%, 62%, 1);
 box-shadow:0px 3px 4px hsla(204, 15%, 94%, 1);
 `}

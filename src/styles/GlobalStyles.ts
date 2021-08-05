@@ -11,6 +11,7 @@ ${({ theme }: { theme: ThemeType }) => css`
 body{
   font-family: 'Roboto', sans-serif;
   color: ${theme.colors.dark};
+  background-color:white;
 }
 button{
   cursor:pointer;

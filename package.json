@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
+    "formik": "^2.2.9",
     "framer-motion": "^4.1.17",
     "gatsby": "^3.9.1",
     "gatsby-plugin-gatsby-cloud": "^2.9.1",
@@ -45,7 +46,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public -b site"
+    "deploy": "gatsby build && gh-pages -d public -b site2"
   },
   "repository": {
     "type": "git",

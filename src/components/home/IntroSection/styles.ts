@@ -1,13 +1,17 @@
-import styled, { css } from "styled-components"
-import { ThemeType } from "../styles";
+import styled, { css } from "styled-components";
 
-export const IntroSection = styled.section`
+import { ThemeType } from "../../../styles";
+
+export const IntroSectionWrapper = styled.section`
 ${({ theme }: { theme: ThemeType }) => css`
   width: 100%;
   height: 600px;
   display: grid;
   grid-template-columns: 1fr 340px 10%;
   grid-template-rows: 1fr 300px 300px;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:100% auto;
   & > div {
     grid-column: 2 /span 1;
     grid-row: 2 /span 1;
@@ -105,27 +109,3 @@ ${({ theme }: { theme: ThemeType }) => css`
   }
 `
   }`;
-
-export const AboutMeSection = styled.section`
-width:100%;
-overflow:hidden;
-height:400px;
-position:relative;
-`;
-
-export const TiltedBg = styled.div`
-${({ theme }: { theme: ThemeType }) => css`
-position:absolute;
-width:160%;
-height:100%;
-top:30%;
-left:-10px;
-background-color:${theme.colors.secondary[400]};
-transform: rotate(-4deg);
-`}
-`;
-
-
-export const ContactMeSection = styled.section`
-height:400px;
-`;
