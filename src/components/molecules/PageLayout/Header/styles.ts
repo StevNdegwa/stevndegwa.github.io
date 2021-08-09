@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { ThemeType } from "../../../styles";
+import { ThemeType } from "../../../../styles";
 
 export const HeaderWrapper = styled.header`
 ${({ theme }: { theme: ThemeType }) => css`

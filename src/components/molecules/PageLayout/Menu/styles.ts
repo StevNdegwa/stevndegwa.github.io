@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
-import { ThemeType } from "../../../styles";
+import { ThemeType } from "../../../../styles";
 
 export const MenuWrapper = styled(motion.nav)`
 ${({ theme }: { theme: ThemeType }) => css`

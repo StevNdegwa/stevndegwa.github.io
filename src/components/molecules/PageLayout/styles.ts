@@ -9,6 +9,5 @@ position:relative;
 `;
 
 export const PageContent = styled.div`
-max-width:2880px;
 margin:auto;
 `;

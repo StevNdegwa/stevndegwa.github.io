@@ -2,15 +2,22 @@ import * as React from "react"
 import {
   PageLayout,
   IntroSection,
-  AboutMeSection,
+  HappyClientsSection,
   ContactMeSection,
+  SectionContainer,
 } from "../components"
 
 const IndexPage = () => (
   <PageLayout>
-    <IntroSection />
-    <AboutMeSection />
-    <ContactMeSection />
+    <SectionContainer>
+      <IntroSection />
+    </SectionContainer>
+    <SectionContainer>
+      <HappyClientsSection />
+    </SectionContainer>
+    <SectionContainer>
+      <ContactMeSection />
+    </SectionContainer>
   </PageLayout>
 )
 

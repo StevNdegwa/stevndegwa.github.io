@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import { Link } from "gatsby"
 import { FaTimes } from "react-icons/fa"
-import { IconButton } from "../../atoms"
+import { IconButton } from "../../../atoms"
 import variants from "./framer"
 import { MenuWrapper, MenuLinks, MenuHeader, MenuFooter } from "./styles"
 

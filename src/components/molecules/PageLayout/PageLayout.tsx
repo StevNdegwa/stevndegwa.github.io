@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import Helmet from "react-helmet";
 import { ThemeProvider } from "styled-components";
-import { theme } from "../../styles";
-import GlobalStyles from "../../styles/GlobalStyles";
+import { theme } from "../../../styles";
+import GlobalStyles from "../../../styles/GlobalStyles";
 import Header from "./Header";
 import { PageLayoutWrapper, PageContent } from "./styles"
 
