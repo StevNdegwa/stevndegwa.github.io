@@ -1,12 +1,10 @@
 import React from "react"
-import { PageLayout, PageHeader, SectionContainer } from "../../components"
+import { PageLayout, PageHeader } from "../../components"
 
 export default function Contacts() {
   return (
     <PageLayout>
-      <PageHeader>
-        <SectionContainer>To reach out</SectionContainer>
-      </PageHeader>
+      <PageHeader>To reach out</PageHeader>
     </PageLayout>
   )
 }

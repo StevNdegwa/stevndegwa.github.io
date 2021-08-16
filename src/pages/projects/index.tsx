@@ -1,12 +1,10 @@
 import React from "react"
-import { PageLayout, PageHeader, SectionContainer } from "../../components"
+import { PageLayout, PageHeader } from "../../components"
 
 export default function Projects() {
   return (
     <PageLayout>
-      <PageHeader>
-        <SectionContainer>My work</SectionContainer>
-      </PageHeader>
+      <PageHeader>My work</PageHeader>
     </PageLayout>
   )
 }

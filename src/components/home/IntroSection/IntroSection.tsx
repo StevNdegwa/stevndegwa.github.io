@@ -21,10 +21,6 @@ export const IntroSection = () => {
       <IntroSectionThingsIDo>
         <div>I live in Nairobi, Kenya</div>
         <div>I am a programmer</div>
-        <div>I build web applications</div>
-        <div>I love designing and building User Interfaces</div>
-        <div>I make data visualizations</div>
-        <div>I listen to and understand my client's needs</div>
       </IntroSectionThingsIDo>
     </IntroSectionWrapper>
   )

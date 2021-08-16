@@ -1,11 +1,11 @@
-import * as React from "react"
+import React from "react"
+import { PageLayout, SectionContainer } from "../components"
+
 import {
-  PageLayout,
   IntroSection,
-  HappyClientsSection,
   ContactMeSection,
-  SectionContainer,
-} from "../components"
+  WhatIDoSection,
+} from "../components/home"
 
 const IndexPage = () => (
   <PageLayout>
@@ -13,7 +13,7 @@ const IndexPage = () => (
       <IntroSection />
     </SectionContainer>
     <SectionContainer>
-      <HappyClientsSection />
+      <WhatIDoSection />
     </SectionContainer>
     <SectionContainer>
       <ContactMeSection />
