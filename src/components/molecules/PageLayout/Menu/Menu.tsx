@@ -16,6 +16,7 @@ const Menu: FC<MenuProps> = ({ expanded, close }) => {
       variants={variants}
       animate={expanded ? "slideOpen" : "slideClose"}
       initial={false}
+      transition={{ duration: 0.3 }}
     >
       <MenuHeader>
         <IconButton onClick={close}>

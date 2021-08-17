@@ -12,9 +12,7 @@ const IndexPage = () => (
     <SectionContainer>
       <IntroSection />
     </SectionContainer>
-    <SectionContainer>
       <WhatIDoSection />
-    </SectionContainer>
     <SectionContainer>
       <ContactMeSection />
     </SectionContainer>

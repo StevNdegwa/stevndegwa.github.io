@@ -5,6 +5,7 @@ import { IconContext } from "react-icons"
 import { theme, ThemeType } from "../../../styles"
 import GlobalStyles from "../../../styles/GlobalStyles"
 import Header from "./Header"
+import Footer from "./Footer"
 import { PageLayoutWrapper, PageContent } from "./styles"
 
 export const PageLayout: FC<Record<string, unknown>> = ({ children }) => {
@@ -41,6 +42,7 @@ export const PageLayout: FC<Record<string, unknown>> = ({ children }) => {
             <Header />
             {children}
           </PageContent>
+          <Footer/>
         </PageLayoutWrapper>
       </IconContext.Provider>
     </ThemeProvider>
