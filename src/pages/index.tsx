@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useCallback, useRef } from "react"
 import { PageLayout, SectionContainer } from "../components"
 
 import {
@@ -7,16 +7,26 @@ import {
   WhatIDoSection,
 } from "../components/home"
 
-const IndexPage = () => (
-  <PageLayout>
-    <SectionContainer>
-      <IntroSection />
-    </SectionContainer>
+const IndexPage = () => {
+  const contacts = useRef<HTMLDivElement | null>(null)
+
+  const moveToContactsSection = useCallback(() => {
+    if (contacts.current) {
+      contacts.current.scrollIntoView({ behavior: "smooth" })
+    }
+  }, [contacts])
+
+  return (
+    <PageLayout>
+      <SectionContainer>
+        <IntroSection moveToContactsSection={moveToContactsSection} />
+      </SectionContainer>
       <WhatIDoSection />
-    <SectionContainer>
-      <ContactMeSection />
-    </SectionContainer>
-  </PageLayout>
-)
+      <SectionContainer>
+        <ContactMeSection ref={contacts} />
+      </SectionContainer>
+    </PageLayout>
+  )
+}
 
 export default IndexPage

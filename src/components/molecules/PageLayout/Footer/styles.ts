@@ -9,13 +9,12 @@ background-color: ${theme.colors.dark};
 
 
 export const FooterTop = styled.div`
-height:140px;
+height:100px;
 `;
 
 export const FooterBottom = styled.div`
 ${({ theme }: { theme: ThemeType }) => css`
-height:80px;
-max-width:80%;
+height:40px;
 margin:auto;
 color:white;
 padding:0.5rem;

@@ -28,7 +28,7 @@ text-align:center;
 `;
 
 export const WhatIDoCards = styled.div`
-padding:1rem;
+padding:3rem 0;
 display:flex;
 justify-content:space-around;
 align-items:center;

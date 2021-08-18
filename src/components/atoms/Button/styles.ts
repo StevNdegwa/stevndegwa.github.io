@@ -9,7 +9,12 @@ border: none;
 font-weight:600;
 font-size:1rem;
 color:inherit;
-border-radius:8px;
+border-radius:25px;
+& > figure{
+    display:inline-block;
+    margin:0.2rem;
+    color:white;
+}
 ${raised && css`box-shadow: 0px 0px 3px ${theme.colors.grey[200]};`}
 ${color === "primary" ?
       css`

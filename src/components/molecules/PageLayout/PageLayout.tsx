@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import Helmet from "react-helmet"
 import { ThemeProvider } from "styled-components"
 import { IconContext } from "react-icons"
-import { theme, ThemeType } from "../../../styles"
+import { theme } from "../../../styles"
 import GlobalStyles from "../../../styles/GlobalStyles"
 import Header from "./Header"
 import Footer from "./Footer"
@@ -12,7 +12,7 @@ export const PageLayout: FC<Record<string, unknown>> = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <IconContext.Provider
-        value={{ color: (theme as ThemeType).colors.dark, className: "icon" }}
+        value={{ className: "icon" }}
       >
         <PageLayoutWrapper>
           <GlobalStyles />

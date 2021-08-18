@@ -25,13 +25,10 @@ export const WhatIDoSection = () => {
             iconSrc={web_design_development}
           />
           <Card
-            content="I build web applications"
+            content="I make data visualizations"
             iconSrc={data_visualization}
           />
-          <Card
-            content="I make data visualizations"
-            iconSrc={web_development}
-          />
+          <Card content="I build web applications" iconSrc={web_development} />
         </WhatIDoCards>
       </SectionContainer>
     </WhatIDoSectionWrapper>

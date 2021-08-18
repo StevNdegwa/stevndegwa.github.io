@@ -1,12 +1,17 @@
-import React from "react"
-
+import React, { FC } from "react"
+import { FaRegCommentAlt } from "react-icons/fa"
 import {
   IntroSectionWrapper,
   IntroSectionName,
   IntroSectionThingsIDo,
+  LetsTalkBtn,
 } from "./styles"
 
-export const IntroSection = () => {
+export interface IntroSectionProps {
+  moveToContactsSection: () => void;
+}
+
+export const IntroSection: FC<IntroSectionProps> = ({ moveToContactsSection }) => {
   return (
     <IntroSectionWrapper>
       <IntroSectionName>
@@ -18,10 +23,16 @@ export const IntroSection = () => {
           I’m an <span>Engineer</span>. I build things that solve problems.
         </div>
       </IntroSectionName>
-      <IntroSectionThingsIDo>
+      {/**<IntroSectionThingsIDo>
         <div>I live in Nairobi, Kenya</div>
         <div>I am a programmer</div>
-      </IntroSectionThingsIDo>
+      </IntroSectionThingsIDo>**/}
+      <LetsTalkBtn onClick={moveToContactsSection}>
+        Lets talk{" "}
+        <figure>
+          <FaRegCommentAlt />
+        </figure>{" "}
+      </LetsTalkBtn>
     </IntroSectionWrapper>
   )
 }
