@@ -4,73 +4,140 @@ import { ThemeType } from "../../../styles";
 export const WhatIDoSectionWrapper = styled.div`
 ${({ theme }: { theme: ThemeType }) => css`
   width 100%;
-  background-color: ${theme.colors.dark};
-  box-shadow: 0px 0px 6px inset ${theme.colors.grey[900]}; 
+  @media only screen and (min-width: ${theme.tabletBreakdown1}) and (max-width:${theme.tabletBreakdown2}){
+    height:450px;
+    display:flex;
+    justify-content:space-between;
+  }
+  @media only screen and (min-width: ${theme.tabletBreakdown2}){
+    height:650px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+  }
 `}
 `;
 
-export const WhatIDoTitle = styled.div`
+export const LeftSide = styled.div`
 ${({ theme }: { theme: ThemeType }) => css`
-height:5rem;
-text-align:center;
-&>h3{
-  color:${theme.colors.primary[300]};
-  font-weight:300;
-  line-height:3rem;
-}
-&>h4{
-  color:${theme.colors.light};
-  font-weight:300;
-  line-height:2rem;
-  font-style: italic;
-}
-`}
-`;
-
-export const WhatIDoCards = styled.div`
-padding:3rem 0;
+width:100%;
 display:flex;
 justify-content:space-around;
-align-items:center;
 flex-wrap:wrap;
+margin-bottom:40px;
+@media only screen and (min-width: ${theme.tabletBreakdown1}) and (max-width:${theme.tabletBreakdown2}){
+  width: 400px;
+}
+@media only screen and (min-width: ${theme.tabletBreakdown2}) and (max-width:${theme.desktop2}){
+  width: 450px;
+  display:grid;
+  grid-template-columns: repeat(9, 50px);
+  grid-template-rows: repeat(18, 25px);
+  grid-template-areas:
+    'web_design web_design web_design web_design . . . . .'
+    'web_design web_design web_design web_design . . . . .'
+    'web_design web_design web_design web_design . . . . .'
+    'web_design web_design web_design web_design . . . . .'
+    'web_design web_design web_design web_design . . . . .'
+    'web_design web_design web_design web_design . web_development web_development web_development web_development'
+    'web_design web_design web_design web_design . web_development web_development web_development web_development'
+    'web_design web_design web_design web_design . web_development web_development web_development web_development'
+    '. . . . . web_development web_development web_development web_development'
+    '. . . . . web_development web_development web_development web_development'
+    'data_visualization data_visualization data_visualization data_visualization . web_development web_development web_development web_development'
+    'data_visualization data_visualization data_visualization data_visualization . web_development web_development web_development web_development'
+    'data_visualization data_visualization data_visualization data_visualization . web_development web_development web_development web_development'
+    'data_visualization data_visualization data_visualization data_visualization . . . . .'
+    'data_visualization data_visualization data_visualization data_visualization . . . . .'
+    'data_visualization data_visualization data_visualization data_visualization . . . . .'
+    'data_visualization data_visualization data_visualization data_visualization . . . . .'
+    'data_visualization data_visualization data_visualization data_visualization . . . . .';
+}
+@media only screen and (min-width: ${theme.desktop2}){
+  width: 690px;
+  height:100%;
+  display:grid;
+  grid-template-columns: repeat(13, 50px);
+  grid-template-rows: repeat(26, 25px);
+  grid-template-areas:
+    'web_design web_design web_design web_design web_design web_design . . . . . . .'
+    'web_design web_design web_design web_design web_design web_design . . . . . . .'
+    'web_design web_design web_design web_design web_design web_design . . . . . . .'
+    'web_design web_design web_design web_design web_design web_design . . . . . . .'
+    'web_design web_design web_design web_design web_design web_design . . . . . . .'
+    'web_design web_design web_design web_design web_design web_design . . . . . . .'
+    'web_design web_design web_design web_design web_design web_design . . . . . . .'
+    'web_design web_design web_design web_design web_design web_design . . . . . . .'
+    'web_design web_design web_design web_design web_design web_design . web_development web_development web_development web_development web_development web_development'
+    'web_design web_design web_design web_design web_design web_design . web_development web_development web_development web_development web_development web_development'
+    'web_design web_design web_design web_design web_design web_design . web_development web_development web_development web_development web_development web_development'
+    'web_design web_design web_design web_design web_design web_design . web_development web_development web_development web_development web_development web_development'
+    '. . . . . . . web_development web_development web_development web_development web_development web_development'
+    '. . . . . . . web_development web_development web_development web_development web_development web_development'
+    'data_visualization data_visualization data_visualization data_visualization data_visualization data_visualization . web_development web_development web_development web_development web_development web_development'
+    'data_visualization data_visualization data_visualization data_visualization data_visualization data_visualization . web_development web_development web_development web_development web_development web_development'
+    'data_visualization data_visualization data_visualization data_visualization data_visualization data_visualization . web_development web_development web_development web_development web_development web_development'
+    'data_visualization data_visualization data_visualization data_visualization data_visualization data_visualization . web_development web_development web_development web_development web_development web_development'
+    'data_visualization data_visualization data_visualization data_visualization data_visualization data_visualization . . . . . . .'
+    'data_visualization data_visualization data_visualization data_visualization data_visualization data_visualization . . . . . . .'
+    'data_visualization data_visualization data_visualization data_visualization data_visualization data_visualization . . . . . . .'
+    'data_visualization data_visualization data_visualization data_visualization data_visualization data_visualization . . . . . . .'
+    'data_visualization data_visualization data_visualization data_visualization data_visualization data_visualization . . . . . . .'
+    'data_visualization data_visualization data_visualization data_visualization data_visualization data_visualization . . . . . . .'
+    'data_visualization data_visualization data_visualization data_visualization data_visualization data_visualization . . . . . . .'
+    'data_visualization data_visualization data_visualization data_visualization data_visualization data_visualization . . . . . . .'
+    ;
+}
+`}
 `;
 
-export const WhatIDoCard = styled.div`
+
+export const RightSide = styled.div`
 ${({ theme }: { theme: ThemeType }) => css`
-  width:270px;
-  height:320px;
-  border-radius:8px;
-  overflow:hidden;
-  font-weight:900;
-  margin:0.5rem;
-  cursor:pointer;
-  box-shadow:none;
-  transition: box-shadow 500ms;
-  &:hover{
-    box-shadow: 0px 0px 12px ${theme.colors.grey[400]};
+width:90%;
+margin:auto;
+&>h1{
+  font-size:2rem;
+}
+&>ul{
+  &>li{
+    font-size: 1.2rem;
+    margin: 1rem 2rem;
   }
-  &>figure{
-    height:40%;
-    width:100%;
-    background-color:white;
-    position:relative;
-    &>img{
-      height:100%;
-      max-width:100%;
-      position:absolute;
-      left:50%;
-      transform:translate(-50%); 
+}
+@media only screen and (min-width: ${theme.tabletBreakdown1}) and (max-width: ${theme.tabletBreakdown2}){
+  width:fit-content;
+  &>h1{
+    font-size:2.5rem;
+  }
+  &>ul{
+    &>li{
+      font-size: 1.3rem;
+      margin: 1.2rem 1.2rem;
     }
   }
-  &>div{
-    height:60%;
-    width:100%;
-    background-color:${theme.colors.secondary[300]};
-    text-align:center;
-    color:white;
-    padding:0.8rem;
-    display:flex;
-    justify-content:center;
-    font-size:2rem;
+}
+@media only screen and (min-width: ${theme.tabletBreakdown2}){
+  min-width:490px;
+  width:fit-content;
+  height:490px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  margin:0;
+  &>h1{
+    font-size:3rem;
   }
-`}`;
+  &>ul{
+    &>li{
+      font-size: 1.8rem;
+      margin: 1.5rem 1.5rem;
+    }
+  }
+}
+@media only screen and (min-width: ${theme.tabletBreakdown2}) and (max-width:${theme.desktop2}){
+  width:390px;
+  min-width:0px;
+}
+`}
+`;

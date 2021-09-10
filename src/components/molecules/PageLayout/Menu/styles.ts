@@ -5,6 +5,7 @@ import { ThemeType } from "../../../../styles";
 export const MenuWrapper = styled(motion.nav)`
 ${({ theme }: { theme: ThemeType }) => css`
 height:0px;
+border-top: 1rem solid hsla(210, 29%, 24%, 100%);
 max-height:100vh;
 overflow:hidden;
 width:100%;
@@ -14,21 +15,22 @@ left:0;
 z-index:${theme.zIndices.popover};
 background-color:white;
 font-family: 'Merienda', cursive;
-border-top: 1rem solid hsla(210, 29%, 24%, 100%);
-border-bottom: 1px solid hsla(200, 16%, 62%, 1);
-box-shadow:0px 3px 4px hsla(204, 15%, 94%, 1);
 `}
 `;
 
 export const MenuHeader = styled.header`
 ${({ theme }: { theme: ThemeType }) => css`
-height:6rem;
+height:4rem;
 display:flex;
 justify-content:flex-end;
 align-items:center;
 padding:0 1rem;
-@media only screen and (min-width: ${theme.phoneBreakdown}){
+& button{
+  color:${theme.colors.dark};
+}
+@media only screen and (min-width: ${theme.tabletBreakdown2}){
   padding: 0 2rem;
+  height:6rem;
 }
 `}
 `;
@@ -47,41 +49,20 @@ height:calc(100% - 8rem);
     color: hsla(210, 29%, 24%, 1);
     &:hover{
       color: hsla(145, 61%, 59%, 1);
-      & > div{
-        display:flex;
+      & > span{
+        display:inline-block;
+        width: 50px;
       }
     }
     & > a{
       text-decoration:none;
       color: inherit;
     }
-    &>div{
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        display:none;
-      &>div{
-        position:relative;
-        height:1.5rem;
-        width:5rem;
-        &>div:first-of-type{
-          position:absolute;
-          top:0;
-          left:0;
-          width:1.1rem;
-          height:1.3rem;
-          border-left:1px solid currentColor;
-          border-bottom: 1px solid currentColor;
-          transform:rotate(45deg);
-        }
-        &>div:last-of-type{
-          position:absolute;
-          top:45%;
-          left:-5px;
-          width:4rem;
-          border-bottom:1px solid currentColor;
-        }
-      }
+    &>span{
+        display:inline-block;
+        width:0px;
+        overflow:hidden;
+        transition: width 500ms;
     }
   }
 }

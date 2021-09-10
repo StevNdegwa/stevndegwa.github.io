@@ -1,0 +1,5 @@
+@counter-style points {
+  system: cyclic;
+  symbols: ❆;
+  suffix: " ";
+}

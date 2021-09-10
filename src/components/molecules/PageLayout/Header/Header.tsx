@@ -8,7 +8,6 @@ const Header: FC = () => {
   const [menuExpanded, setMenuExpanded] = useState<boolean>(false)
 
   const openMenu = useCallback(() => {
-    console.log("Menu open")
     setMenuExpanded(true)
   }, [setMenuExpanded])
 
@@ -19,7 +18,7 @@ const Header: FC = () => {
   return (
     <HeaderWrapper>
       <IconLink href="https://github.com/StevNdegwa" target="_blank">
-        <FaGithub color="#2C3E50" />
+        <FaGithub />
       </IconLink>
       <IconButton onClick={openMenu}>
         <FaBars />

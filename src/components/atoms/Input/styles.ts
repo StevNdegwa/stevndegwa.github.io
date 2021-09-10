@@ -1,16 +1,6 @@
-import styled, { css } from "styled-components";
-import { ThemeType } from "../../../styles";
+import styled from "styled-components";
 
 export const InputWrapper = styled.input`
-${({ theme }: { theme: ThemeType }) => css`
-display:block;
-height:3rem;
+height:4rem;
 width:100%;
-border:none;
-background-color: ${theme.colors.grey[50]};
-padding:0.4rem;
-&:focus{
-  outline: 2px solid ${theme.colors.tertiary[400]};
-}
-`}
-`;
+border:none;`;

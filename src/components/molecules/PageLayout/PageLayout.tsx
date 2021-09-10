@@ -3,18 +3,22 @@ import Helmet from "react-helmet"
 import { ThemeProvider } from "styled-components"
 import { IconContext } from "react-icons"
 import { theme } from "../../../styles"
+import "../../../styles/base.css"
 import GlobalStyles from "../../../styles/GlobalStyles"
 import Header from "./Header"
 import Footer from "./Footer"
+import { PageAlert } from "../PageAlert"
 import { PageLayoutWrapper, PageContent } from "./styles"
 
-export const PageLayout: FC<Record<string, unknown>> = ({ children }) => {
+export const PageLayout: FC<Record<string, unknown>> = ({
+  children,
+  ...props
+}) => {
   return (
     <ThemeProvider theme={theme}>
-      <IconContext.Provider
-        value={{ className: "icon" }}
-      >
-        <PageLayoutWrapper>
+      <IconContext.Provider value={{ className: "icon" }}>
+        <PageAlert>Site still in development</PageAlert>
+        <PageLayoutWrapper {...props}>
           <GlobalStyles />
           <Helmet>
             <title>Stephen Ng'ang'a | Software developer</title>
@@ -42,7 +46,7 @@ export const PageLayout: FC<Record<string, unknown>> = ({ children }) => {
             <Header />
             {children}
           </PageContent>
-          <Footer/>
+          <Footer />
         </PageLayoutWrapper>
       </IconContext.Provider>
     </ThemeProvider>

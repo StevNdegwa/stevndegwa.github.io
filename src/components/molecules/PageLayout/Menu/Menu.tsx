@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, { FC, memo } from "react"
 import { Link } from "gatsby"
 import { FaTimes } from "react-icons/fa"
 import { IconButton } from "../../../atoms"
@@ -10,7 +10,7 @@ export interface MenuProps {
   close: () => void
 }
 
-const Menu: FC<MenuProps> = ({ expanded, close }) => {
+const Menu: FC<MenuProps> = memo(({ expanded, close }) => {
   return (
     <MenuWrapper
       variants={variants}
@@ -26,19 +26,18 @@ const Menu: FC<MenuProps> = ({ expanded, close }) => {
       <MenuLinks>
         <ul>
           <li>
-            <Arrow />
-            <Link to="/">Home</Link>
+            <span>⇠</span> &nbsp;<Link to="/">Home</Link>
           </li>
           <li>
-            <Arrow />
+            <span>⇠</span> &nbsp;
             <Link to="/about">About</Link>
           </li>
           <li>
-            <Arrow />
+            <span>⇠</span> &nbsp;
             <Link to="/projects">Projects</Link>
           </li>
           <li>
-            <Arrow />
+            <span>⇠</span> &nbsp;
             <Link to="/contacts">Contacts</Link>
           </li>
         </ul>
@@ -46,15 +45,6 @@ const Menu: FC<MenuProps> = ({ expanded, close }) => {
       <MenuFooter>Copyright @ {new Date().getFullYear()}</MenuFooter>
     </MenuWrapper>
   )
-}
-
-const Arrow = () => (
-  <div>
-    <div>
-      <div />
-      <div />
-    </div>
-  </div>
-)
+})
 
 export default Menu

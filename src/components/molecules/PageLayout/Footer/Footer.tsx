@@ -1,11 +1,11 @@
-import React from 'react';
-import { SectionContainer } from "../../SectionContainer";
-import { FooterWrapper, FooterTop, FooterBottom } from "./styles";
+import React from "react"
+import { SectionContainer } from "../../SectionContainer"
+import { FooterWrapper, FooterTop, FooterBottom } from "./styles"
 
-const Footer = () => {  
+const Footer = () => {
   return (
     <FooterWrapper>
-      <SectionContainer>
+      <SectionContainer style={{ marginBottom: "0px" }}>
         <FooterTop></FooterTop>
         <FooterBottom>
           <p>Copyright @ {new Date().getFullYear()}</p>
@@ -15,4 +15,4 @@ const Footer = () => {
   )
 }
 
-export default Footer;
+export default Footer

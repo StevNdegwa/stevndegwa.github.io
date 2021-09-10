@@ -16,5 +16,33 @@ body{
 button{
   cursor:pointer;
 }
+ul {
+  list-style: points;
+}
+textarea, input{
+display:block;
+font:inherit;
+color:inherit;
+font-size:1.3rem;
+border:none;
+background-color: ${theme.colors.grey[50]};
+padding:0.4rem;
+border-radius:5px;
+transition:border 100ms;
+&:focus{
+  outline: none;
+  border: 1px solid ${theme.colors.tertiary[400]};
+}
+}
+::-webkit-scrollbar{
+  width:5px;
+  background:white;
+}
+::-webkit-scrollbar-track{
+  border-radius:10px;
+}
+::-webkit-scrollbar-thumb{
+  background:${theme.colors.dark};
+}
 `}
 `;
