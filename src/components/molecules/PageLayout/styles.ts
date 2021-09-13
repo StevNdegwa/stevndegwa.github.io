@@ -6,8 +6,17 @@ min-height:100vh;
 border-top: 1rem solid hsla(210, 29%, 24%, 100%);
 border-bottom: 1rem solid hsla(210, 29%, 24%, 100%);
 position:relative;
+overflow:hidden;
 `;
 
 export const PageContent = styled.div`
 margin:auto;
+`;
+
+export const SkipToContent = styled.button`
+position:fixed;
+top:0;
+left:0;
+border:none;
+padding: 0.5rem 1rem;
 `;

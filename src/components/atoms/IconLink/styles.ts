@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "gatsby";
 
-export const LinkWrapper = styled.a`
+export const LinkWrapper = styled(Link)`
 padding:0.4rem;
 background-color:transparent;
 border:none;

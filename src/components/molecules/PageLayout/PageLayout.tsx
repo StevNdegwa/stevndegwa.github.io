@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, { FC, useCallback } from "react"
 import Helmet from "react-helmet"
 import { ThemeProvider } from "styled-components"
 import { IconContext } from "react-icons"
@@ -8,10 +8,16 @@ import GlobalStyles from "../../../styles/GlobalStyles"
 import Header from "./Header"
 import Footer from "./Footer"
 import { PageAlert } from "../PageAlert"
-import { PageLayoutWrapper, PageContent } from "./styles"
+import { PageLayoutWrapper, PageContent, SkipToContent } from "./styles"
 
-export const PageLayout: FC<Record<string, unknown>> = ({
+export interface PageLayoutProps {
+  skipToContent: () => void
+  [prop: string]: unknown
+}
+
+export const PageLayout: FC<PageLayoutProps> = ({
   children,
+  skipToContent,
   ...props
 }) => {
   return (
@@ -43,6 +49,9 @@ export const PageLayout: FC<Record<string, unknown>> = ({
             />
           </Helmet>
           <PageContent>
+            <SkipToContent tabIndex={1} onClick={skipToContent}>
+              Skip to content
+            </SkipToContent>
             <Header />
             {children}
           </PageContent>

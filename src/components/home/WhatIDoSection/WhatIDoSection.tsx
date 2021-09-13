@@ -15,7 +15,7 @@ export const WhatIDoSection: FC<WhatIDoSectionProps> = ({
   moveToContactsSection,
 }) => {
   return (
-    <WhatIDoSectionWrapper>
+    <WhatIDoSectionWrapper id="what_I_do">
       <LeftSide>
         <Card
           imgSrc={web_design_development}
@@ -46,6 +46,7 @@ export const WhatIDoSection: FC<WhatIDoSectionProps> = ({
         <h1>What I offer</h1>
         <ul>
           <li>Usable web applications</li>
+          <li>Responsive web applications</li>
           <li>Insightful solutions</li>
           <li>Thoughtful design</li>
           <li>User accessibility</li>

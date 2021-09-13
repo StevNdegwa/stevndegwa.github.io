@@ -8,6 +8,7 @@ import {
   IntroSection,
   ContactMeSection,
   WhatIDoSection,
+  MySkills,
 } from "../components/home"
 
 const TopBg = styled.div`
@@ -42,7 +43,7 @@ const TopBg = styled.div`
 `
 
 const IndexPage = () => {
-  const contacts = useRef<HTMLDivElement | null>(null)
+  const contacts = useRef<HTMLFormElement | null>(null)
 
   const moveToContactsSection = useCallback(() => {
     if (contacts.current) {
@@ -50,14 +51,21 @@ const IndexPage = () => {
     }
   }, [contacts])
 
+  const skipToContent = useCallback(() => {
+    document.getElementById("what_I_do")?.scrollIntoView({ behavior: "smooth" })
+  }, [])
+
   return (
-    <PageLayout>
+    <PageLayout skipToContent={skipToContent}>
       <TopBg />
       <SectionContainer>
         <IntroSection />
       </SectionContainer>
       <SectionContainer>
         <WhatIDoSection moveToContactsSection={moveToContactsSection} />
+      </SectionContainer>
+      <SectionContainer>
+        <MySkills />
       </SectionContainer>
       <SectionContainer>
         <ContactMeSection ref={contacts} />

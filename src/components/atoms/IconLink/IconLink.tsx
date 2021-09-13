@@ -1,11 +1,21 @@
 import React, { FC } from "react"
-import { LinkWrapper } from "./styles";
+import { LinkWrapper } from "./styles"
 
 export interface IconLinkProps {
-  color?: "primary" | "secondary" | "tertiary";
-  [prop: string]: unknown;
+  color?: "primary" | "secondary" | "tertiary"
+  href: string
+  [prop: string]: unknown
 }
 
-export const IconLink: FC<IconLinkProps> = ({ children, color, ...props }) => {
-  return <LinkWrapper {...props}>{children}</LinkWrapper>
-};
+export const IconLink: FC<IconLinkProps> = ({
+  children,
+  color,
+  href,
+  ...props
+}) => {
+  return (
+    <LinkWrapper to={href} {...props}>
+      {children}
+    </LinkWrapper>
+  )
+}

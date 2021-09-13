@@ -1,8 +1,17 @@
-import React, { FC, useEffect, useRef } from "react"
+import React, { CSSProperties, FC, useEffect, useRef } from "react"
 import { styleElementInView } from "../../../hooks"
 import { SectionContainerWrapper } from "./styles"
 
-export const SectionContainer: FC = ({ children, ...props }) => {
+export interface SectionContainerProps {
+  style?: CSSProperties
+  [prop: string]: unknown
+}
+
+export const SectionContainer: FC<SectionContainerProps> = ({
+  children,
+  style,
+  ...props
+}) => {
   const section = useRef(null)
   useEffect(() => {
     if (section.current) {
@@ -12,7 +21,7 @@ export const SectionContainer: FC = ({ children, ...props }) => {
   }, [section])
 
   return (
-    <SectionContainerWrapper ref={section} {...props}>
+    <SectionContainerWrapper ref={section} style={style} {...props}>
       {children}
     </SectionContainerWrapper>
   )

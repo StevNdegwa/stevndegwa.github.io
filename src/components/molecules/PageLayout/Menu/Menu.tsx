@@ -15,7 +15,6 @@ const Menu: FC<MenuProps> = memo(({ expanded, close }) => {
     <MenuWrapper
       variants={variants}
       animate={expanded ? "slideOpen" : "slideClose"}
-      initial={false}
       transition={{ duration: 0.3 }}
     >
       <MenuHeader>
@@ -26,19 +25,16 @@ const Menu: FC<MenuProps> = memo(({ expanded, close }) => {
       <MenuLinks>
         <ul>
           <li>
-            <span>⇠</span> &nbsp;<Link to="/">Home</Link>
+            <span>⇠</span> &nbsp;
+            <Link to="/about">About me</Link>
           </li>
           <li>
             <span>⇠</span> &nbsp;
-            <Link to="/about">About</Link>
+            <Link to="/projects">My Projects</Link>
           </li>
           <li>
             <span>⇠</span> &nbsp;
-            <Link to="/projects">Projects</Link>
-          </li>
-          <li>
-            <span>⇠</span> &nbsp;
-            <Link to="/contacts">Contacts</Link>
+            <Link to="/contacts">My Contacts</Link>
           </li>
         </ul>
       </MenuLinks>

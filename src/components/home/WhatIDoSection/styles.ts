@@ -113,7 +113,7 @@ margin:auto;
   &>ul{
     &>li{
       font-size: 1.3rem;
-      margin: 1.2rem 1.2rem;
+      margin: 1.2rem 2rem;
     }
   }
 }
@@ -131,7 +131,7 @@ margin:auto;
   &>ul{
     &>li{
       font-size: 1.8rem;
-      margin: 1.5rem 1.5rem;
+      margin: 1.5rem 0 1.5rem 4rem;
     }
   }
 }

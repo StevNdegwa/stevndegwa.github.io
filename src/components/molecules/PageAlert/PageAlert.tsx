@@ -6,10 +6,12 @@ export const PageAlert: FC<{ children: string }> = ({ children }) => {
   const [showing, setShowing] = useState(true)
 
   useEffect(() => {
-    setTimeout(() => {
+    let timeout = setTimeout(() => {
       setShowing(false)
     }, 10000)
-    return () => {}
+    return () => {
+      clearTimeout(timeout)
+    }
   }, [])
 
   const stopShowing = useCallback(() => {
@@ -17,7 +19,10 @@ export const PageAlert: FC<{ children: string }> = ({ children }) => {
   }, [])
 
   return (
-    <PageAlertWrapper style={{ display: showing ? "flex" : "none" }}>
+    <PageAlertWrapper
+      role="alert"
+      style={{ display: showing ? "flex" : "none" }}
+    >
       <div>
         <FaInfo />
         <span>{children}</span>

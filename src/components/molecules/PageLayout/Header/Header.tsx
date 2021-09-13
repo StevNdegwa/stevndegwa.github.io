@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useState } from "react"
-import { FaBars, FaGithub } from "react-icons/fa"
+import { FaBars, FaGithub, FaHome } from "react-icons/fa"
 import { IconButton, IconLink } from "../../../atoms"
 import { HeaderWrapper } from "./styles"
 import Menu from "../Menu"
@@ -17,12 +17,19 @@ const Header: FC = () => {
 
   return (
     <HeaderWrapper>
-      <IconLink href="https://github.com/StevNdegwa" target="_blank">
-        <FaGithub />
-      </IconLink>
-      <IconButton onClick={openMenu}>
-        <FaBars />
-      </IconButton>
+      <span>
+        <IconLink href="/">
+          <FaHome />
+        </IconLink>
+      </span>
+      <span>
+        <IconLink href="https://github.com/StevNdegwa" target="_blank">
+          <FaGithub />
+        </IconLink>
+        <IconButton onClick={openMenu}>
+          <FaBars />
+        </IconButton>
+      </span>
       <Menu expanded={menuExpanded} close={closeMenu} />
     </HeaderWrapper>
   )

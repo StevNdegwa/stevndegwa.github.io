@@ -3,3 +3,8 @@
   symbols: ❆;
   suffix: " ";
 }
+@counter-style heavy_check {
+  system: cyclic;
+  symbols: ✔;
+  suffix: " ";
+}
