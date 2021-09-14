@@ -1,0 +1,78 @@
+{
+  "skills": [
+    "Javascript (Es6+)",
+    "HTML5",
+    "CSS3",
+    "SVG",
+    "SASS",
+    "Typescript",
+    "React",
+    "Gatsby",
+    "Redux",
+    "Redux Toolkit",
+    "Chakra UI",
+    "styled-components",
+    "@emotion/react",
+    "Relay",
+    "D3.js",
+    "visx",
+    "recharts",
+    "Jest",
+    "Enzyme",
+    "Storybook",
+    "nx",
+    "Lerna",
+    "Webpack",
+    "Rollup",
+    "Node.js",
+    "Express.js",
+    "REST",
+    "GraphQL",
+    "SQL",
+    "Gitlab CI/CD",
+    "Github Actions",
+    "Firebase"
+  ],
+  "badges": [
+    {
+      "title": "Problem Solving",
+      "by": "Codility",
+      "iconLink": "https://media-exp1.licdn.com/dms/image/C560BAQGBtlQsQn8jlg/company-logo_100_100/0/1625683227355?e=1639612800&v=beta&t=6frDBPSr6qZBZHetJhdy9di3IqUbkyZGdr0XJqwYyJI",
+      "from": "01/05/2021",
+      "link": "https://app.codility.com/cert/view/certMQAZQA-FCSSQ2UBQD68YS58/",
+      "homepage": "https://www.codility.com/"
+    },
+    {
+      "title": "Problem Solving",
+      "by": "Codility",
+      "iconLink": "https://media-exp1.licdn.com/dms/image/C560BAQGBtlQsQn8jlg/company-logo_100_100/0/1625683227355?e=1639612800&v=beta&t=6frDBPSr6qZBZHetJhdy9di3IqUbkyZGdr0XJqwYyJI",
+      "from": "01/05/2021",
+      "link": "https://app.codility.com/cert/view/certQAEVEQ-BCJABU237EUY44V5/",
+      "homepage": "https://www.codility.com/"
+    },
+    {
+      "title": "Azure Fundamentals",
+      "by": "Microsoft",
+      "iconLink": "https://media-exp1.licdn.com/dms/image/C560BAQE88xCsONDULQ/company-logo_100_100/0/1618231291419?e=1639612800&v=beta&t=5a5gEcUGzSjZDWm0akWU1krendOqK67QxYQNtu65GWY",
+      "from": "01/07/2020",
+      "link": "https://www.youracclaim.com/badges/aad1bae5-1778-4cc0-ac3e-f90f5d400798?source=linked_in_profile",
+      "homepage": "https://www.microsoft.com/"
+    },
+    {
+      "title": "Propblem Solving",
+      "by": "Hackerank",
+      "iconLink": "https://media-exp1.licdn.com/dms/image/C560BAQGWZ7p_vSxYIA/company-logo_100_100/0/1626808359459?e=1639612800&v=beta&t=U83JB4fynK9KKu_h0wV9aQrBVazS30AzpXbxaJL4h1o",
+      "from": "12/07/2020",
+      "link": "https://www.hackerrank.com/certificates/4179bb563123",
+      "homepage": "https://www.hackerrank.com/"
+    },
+    {
+      "title": "Javascript(Basic)",
+      "by": "Hackerank",
+      "iconLink": "https://media-exp1.licdn.com/dms/image/C560BAQGWZ7p_vSxYIA/company-logo_100_100/0/1626808359459?e=1639612800&v=beta&t=U83JB4fynK9KKu_h0wV9aQrBVazS30AzpXbxaJL4h1o",
+      "from": "12/07/2020",
+      "link": "https://www.hackerrank.com/certificates/3cb2a879b9e5",
+      "homepage": "https://www.hackerrank.com/"
+    }
+  ]
+}

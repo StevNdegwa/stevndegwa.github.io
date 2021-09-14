@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const MySkillsWrapper = styled.div`
 text-align:center;
+max-width: 600px;
+margin:auto;
 `;
 
 export const MySkillsTitle = styled.h1`

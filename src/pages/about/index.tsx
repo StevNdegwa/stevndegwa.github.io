@@ -1,16 +1,28 @@
-import React from "react"
+import React, { useCallback } from "react"
 import { PageLayout, PageHeader, SectionContainer } from "../../components"
-import { WhatIDoSection } from "../../components/about";
+import {
+  WhatIDo,
+  HowIDoIt,
+  WhyMe,
+  BadgesCertifications,
+} from "../../components/about"
 
 export default function About() {
+  const skipToContent = useCallback(() => {}, [])
+
   return (
-    <PageLayout>
-      <PageHeader>
-        About Me
-      </PageHeader>
+    <PageLayout skipToContent={skipToContent}>
+      <PageHeader>About Me</PageHeader>
       <SectionContainer>
-        <WhatIDoSection/>
+        <WhatIDo />
       </SectionContainer>
+      <SectionContainer>
+        <HowIDoIt />
+      </SectionContainer>
+      <SectionContainer>
+        <WhyMe />
+      </SectionContainer>
+      <BadgesCertifications />
     </PageLayout>
   )
 }

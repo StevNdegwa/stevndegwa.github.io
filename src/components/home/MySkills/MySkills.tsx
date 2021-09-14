@@ -7,7 +7,7 @@ export const MySkills = () => {
     dataJson: { skills },
   } = useStaticQuery(
     graphql`
-      query MyQuery {
+      query {
         dataJson(skills: {}) {
           skills
         }

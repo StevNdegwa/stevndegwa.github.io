@@ -18,7 +18,7 @@ const Header: FC = () => {
   return (
     <HeaderWrapper>
       <span>
-        <IconLink href="/">
+        <IconLink to="/">
           <FaHome />
         </IconLink>
       </span>
