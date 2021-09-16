@@ -2,16 +2,16 @@ import styled, { css } from "styled-components";
 import { ThemeType } from "../../../styles";
 
 export const CheckboxWrapper = styled.div`
-  height: 50px;
+  height: 40px;
   position: relative;
-  padding-left: 50px;
+  padding-left: 40px;
 `;
 
 export const CheckboxInput = styled.input`
 ${({ theme }: { theme: ThemeType }) => css`
   position: absolute;
-  width:30px;
-  height:30px;
+  width:20px;
+  height:20px;
   left: 0;
   top: 0.5rem;
   opacity: 0;
@@ -40,16 +40,16 @@ ${({ theme }: { theme: ThemeType }) => css`
 `;
 
 export const CheckboxLabel = styled.label`
-  line-height: 50px;
+  line-height: 40px;
 `;
 
 export const CheckboxIcon = styled.div`
   ${({ invalid, theme }: { invalid: boolean; theme: ThemeType }) => css`
     z-index: 2;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     overflow: hidden;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     pointer-events: none;
     position: absolute;
     left: 0;

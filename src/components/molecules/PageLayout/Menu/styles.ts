@@ -7,7 +7,7 @@ ${({ theme }: { theme: ThemeType }) => css`
 height:0px;
 border-top: 1rem solid hsla(210, 29%, 24%, 100%);
 max-height:100vh;
-overflow:hidden;
+overflow:auto;
 width:100%;
 position:fixed;
 top:0;

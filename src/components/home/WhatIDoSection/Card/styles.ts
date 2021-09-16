@@ -4,16 +4,20 @@ import { ThemeType } from "../../../../styles";
 export const CardWrapper = styled.div`
 ${({ theme }: { theme: ThemeType }) => css`
 width:150px;
-height:150px;
-background-color:white;
+height:150px;background-color:hsla(360, 100%, 100%, 0.8);
+backdrop-filter: blur(20px);
+box-shadow: 0px 0px 15px ${theme.colors.grey[200]};
 border-radius:25px;
 display:flex;
 justify-content:center;
 align-items:center;
-box-shadow: 0px 4px 10px ${theme.colors.grey[100]};
+box-shadow: 0px 4px 4px ${theme.colors.grey[100]};
 margin: 10px;
 transform: scale(0.5);
 transition: transform 500ms;
+&:hover{
+  box-shadow: 0px 4px 10px ${theme.colors.grey[100]};
+}
 &>div{
   width:100px;
   max-height:100px;

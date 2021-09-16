@@ -7,6 +7,8 @@ import {
   BadgesCertificationsTitle,
   BadgesCertificationsItems,
   Item,
+  Circle2,
+  Circle1,
 } from "./styles"
 
 type Badge = {
@@ -40,13 +42,15 @@ export const BadgesCertifications = () => {
 
   return (
     <BadgesCertificationsWrapper>
-      <SectionContainer>
+      <Circle1 />
+      <Circle2 />
+      <SectionContainer style={{ marginBottom: "0px" }}>
         <BadgesCertificationsTitle>
           Badges and Certifications
         </BadgesCertificationsTitle>
         <BadgesCertificationsItems>
-          {badges.map((badge: Badge) => (
-            <Item>
+          {badges.map((badge: Badge, index: number) => (
+            <Item key={index}>
               <section>
                 <div>
                   <a href={badge.homepage} target="_blank">

@@ -3,24 +3,54 @@ import { ThemeType } from "../../../styles";
 
 export const BadgesCertificationsWrapper = styled.div`
 ${({ theme }: { theme: ThemeType }) => css`
-min-height: 400px;
-padding:1rem 0;
-overflow:hidden;
 background-color:${theme.colors.grey[100]};
+position:relative;
+`}
+`;
+
+export const Circle1 = styled.div`
+${({ theme }: { theme: ThemeType }) => css`
+position: absolute;
+background-color:${theme.colors.secondary[200]};
+width:200px;
+height:200px;
+border-radius: 50%;
+left:50%;
+top:25%;
+transform: translate(-100px, 0px);
+`}
+`;
+
+export const Circle2 = styled.div`
+${({ theme }: { theme: ThemeType }) => css`
+position: absolute;
+background-color:${theme.colors.primary[200]};
+width:300px;
+height:300px;
+border-radius: 50%;
+left:50%;
+top:100%;
+transform: translate(-500px, -350px);
 `}
 `;
 
 export const BadgesCertificationsTitle = styled.h1`
 text-align:center;
 height:4rem;
+padding-top:1rem;
 font-family: "Merienda", cursive;
 `;
 
 export const BadgesCertificationsItems = styled.ul`
+${({ theme }: { theme: ThemeType }) => css`
   list-style-type:none;
   display:flex;
   justify-content:space-around;
   flex-wrap:wrap;
+  @media only screen and (min-width: ${theme.phoneBreakdown}){
+    justify-content:space-between;
+  }
+`}
 `;
 
 export const Item = styled.li`
@@ -28,11 +58,18 @@ ${({ theme }: { theme: ThemeType }) => css`
 width: 300px;
 height: 300px;
 display: flex;
-background-color: ${theme.colors.light};
+background-color:hsla(360, 100%, 100%, 0.4);
+backdrop-filter: blur(20px);
+box-shadow: 0px 0px 15px ${theme.colors.grey[200]};
 flex-direction:column;
 justify-content:space-around;
 border-radius:15px;
-margin:1rem;
+margin: 0.5rem 1rem 1rem 0;
+box-shadow:none;
+transition:box-shadow 500ms;
+&:hover{
+  box-shadow: 0px 0px 25px ${theme.colors.grey[300]};
+}
 &>section{
   height:70px;
   width: 270px;
