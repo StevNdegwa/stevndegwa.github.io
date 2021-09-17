@@ -30,6 +30,7 @@ export const PageLayout: FC<PageLayoutProps> = ({
             <title>Stephen Ng'ang'a | Software developer</title>
             <link href="" rel="stylesheet" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <meta name="theme-color" content="#2C3E50" />
             <link
               rel="preconnect"
               href="https://fonts.gstatic.com"

@@ -3,6 +3,7 @@ import web_design_development from "../../../images/web_design_web_ux.svg"
 import web_development from "../../../images/web_development.svg"
 import data_visualization from "../../../images/data_visualization.svg"
 import { Button } from "../../atoms"
+import { useStaticQuery, graphql } from "gatsby"
 import Card from "./Card"
 
 import { WhatIDoSectionWrapper, LeftSide, RightSide } from "./styles"
@@ -14,6 +15,20 @@ export interface WhatIDoSectionProps {
 export const WhatIDoSection: FC<WhatIDoSectionProps> = ({
   moveToContactsSection,
 }) => {
+  const {
+    dataJson: { offers },
+  } = useStaticQuery(
+    graphql`
+      query {
+        dataJson(offers: {}) {
+          offers
+        }
+      }
+    `
+  )
+
+  console.log(offers)
+
   return (
     <WhatIDoSectionWrapper id="what_I_do">
       <LeftSide>
@@ -45,12 +60,9 @@ export const WhatIDoSection: FC<WhatIDoSectionProps> = ({
       <RightSide>
         <h1>What I offer</h1>
         <ul>
-          <li>Usable web applications</li>
-          <li>Responsive web applications</li>
-          <li>Insightful solutions</li>
-          <li>Thoughtful design</li>
-          <li>User accessibility</li>
-          <li>Clear data presentation</li>
+          {offers.map((offer: string, index: number) => (
+            <li key={index}>{offer}</li>
+          ))}
         </ul>
         <Button primary raised onClick={moveToContactsSection}>
           Let's Talk
