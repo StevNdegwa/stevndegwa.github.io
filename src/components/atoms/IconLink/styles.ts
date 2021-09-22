@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const LinkWrapper = styled.span`
+display:inline-flex;
 & > a{
   padding:0.4rem;
   background-color:transparent;

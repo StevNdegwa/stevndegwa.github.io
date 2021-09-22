@@ -18,13 +18,13 @@ const Header: FC = () => {
   return (
     <HeaderWrapper>
       <span>
-        <IconLink to="/">
-          <FaHome />
+        <IconLink to="/" label="Home page">
+          <FaHome aria-hidden="true" />
         </IconLink>
       </span>
       <span>
-        <IconLink href="https://github.com/StevNdegwa" target="_blank">
-          <FaGithub />
+        <IconLink href="https://github.com/StevNdegwa" target="_blank" label="Github">
+          <FaGithub aria-hidden="true" />
         </IconLink>
         <IconButton onClick={openMenu}>
           <FaBars />

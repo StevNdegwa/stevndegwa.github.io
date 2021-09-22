@@ -45,7 +45,7 @@ export const ContactMeSection = forwardRef<HTMLFormElement>(({}, ref) => {
                 name="full_name"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Your full name"
+                placeholder="Full name"
                 value={values.full_name}
               />
               {errors.full_name}
@@ -55,7 +55,7 @@ export const ContactMeSection = forwardRef<HTMLFormElement>(({}, ref) => {
                 name="email"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Your email"
+                placeholder="Email e.g. sndegwa.n@outlook.com"
                 value={values.email}
               />
               {errors.email}
@@ -63,7 +63,7 @@ export const ContactMeSection = forwardRef<HTMLFormElement>(({}, ref) => {
             <div>
               <TextArea
                 name="message"
-                placeholder="Your Message"
+                placeholder="Message..."
                 value={values.message}
                 onChange={handleChange}
                 onBlur={handleBlur}

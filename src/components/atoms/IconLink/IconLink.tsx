@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { LinkWrapper } from "./styles"
 
 export interface IconLinkProps {
+  label: string
   color?: "primary" | "secondary" | "tertiary"
   href?: string
   to?: string
@@ -10,17 +11,27 @@ export interface IconLinkProps {
 }
 
 export const IconLink: FC<IconLinkProps> = memo(
-  ({ children, color, href, to, ...props }) => (
-    <LinkWrapper>
-      {to ? (
-        <Link to={to} {...props}>
-          {children}
-        </Link>
-      ) : (
-        <a href={href} {...props}>
-          {children}
-        </a>
-      )}
-    </LinkWrapper>
-  )
+  ({ children, color, href, to, label, ...props }) => {
+    const id = label.replace(" ", "_");
+    
+    return (
+      <LinkWrapper>
+        {to ? (
+          <Link to={to} {...props}>
+            {children}
+          </Link>
+        ) : (
+          <a href={href} {...props} aria-labelledby={id}>
+            {children}
+          </a>
+        )}
+        <div
+          style={{ visibility: "hidden", width: "0px" }}
+          id={id}
+        >
+          {label}
+        </div>
+      </LinkWrapper>
+    )
+  }
 )

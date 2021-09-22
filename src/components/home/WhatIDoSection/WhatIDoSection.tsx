@@ -27,8 +27,6 @@ export const WhatIDoSection: FC<WhatIDoSectionProps> = ({
     `
   )
 
-  console.log(offers)
-
   return (
     <WhatIDoSectionWrapper id="what_I_do">
       <LeftSide>
