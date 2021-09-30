@@ -38,6 +38,11 @@ ${color === "primary" ?
                     :
                     css`background-color:transparent`
         };
+&:disabled{
+    background-color: ${theme.colors.grey[300]};
+    box-shadow:none;
+    color: ${theme.colors.grey[100]};
+    cursor: not-allowed;
+}
 `}
-
 `;

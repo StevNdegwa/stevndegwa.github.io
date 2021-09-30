@@ -70,7 +70,7 @@ export const ContactMeSection = forwardRef<HTMLFormElement>(({}, ref) => {
               />
               {errors.message}
             </div>
-            <Button raised type="submit">
+            <Button raised type="submit" disabled>
               Send Message
             </Button>
           </RightSide>

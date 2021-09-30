@@ -16,28 +16,42 @@ const TopBg = styled.div`
     display: none;
     @media only screen and (min-width: ${theme.tabletBreakdown2}) {
       display: block;
-      max-width: 1920px;
-      width: 100%;
+      width: 100vw;
       height: 900px;
-      margin: auto;
       position: absolute;
       top: 0;
       left: 50%;
       transform: translate(-51%);
       z-index: -1;
-      background-image: url(${top_fixed_bg});
-      background-repeat: no-repeat;
-      background-size: 1430px 820px;
+      background-color: ${theme.colors.dark};
+      clip-path: polygon(
+        0 0,
+        0 500px,
+        calc(50% - 450px) 850px,
+        58% 600px,
+        80% 0
+      );
     }
-    @media only screen and (min-width: ${theme.tabletBreakdown2}) and (max-width: ${theme.desktop1}) {
-      background-size: 1024px 587px;
+    @media only screen and (min-width: ${theme.tabletBreakdown2}) and (max-width: ${theme.desktop2}) {
+      clip-path: polygon(
+        0 0,
+        0 300px,
+        calc(50% - 400px) 600px,
+        58% 500px,
+        90% 0
+      );
     }
 
     @media only screen and (min-width: ${theme.desktop1}) and (max-width: ${theme.desktop2}) {
-      background-size: 1190px 630px;
     }
     @media only screen and (min-width: ${theme.desktop2}) and (max-width: ${theme.desktop3}) {
-      background-size: 1350px 774px;
+      clip-path: polygon(
+        0 0,
+        0 400px,
+        calc(50% - 450px) 750px,
+        65% 500px,
+        90% 0
+      );
     }
   `}
 `
