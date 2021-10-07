@@ -26,8 +26,12 @@ const Menu: FC<MenuProps> = memo(({ expanded, close }) => {
         <ul>
           <li>
             <span>⇠</span> &nbsp;
-            <Link to="/about">About me</Link>
+            <Link to="/">Home</Link>
           </li>
+          {/* <li>
+            <span>⇠</span> &nbsp;
+            <Link to="/about">About me</Link>
+          </li> */}
           <li>
             <span>⇠</span> &nbsp;
             <Link to="/projects">My Projects</Link>

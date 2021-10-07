@@ -89,10 +89,11 @@ ${({ theme }: { theme: ThemeType }) => css`
         width: 350px;
         & > div {
           &:first-of-type {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
           }
           &:last-of-type {
-            font-size: 5rem;
+            font-size: 4rem;
+            line-height: 1;
           }
         }
       }

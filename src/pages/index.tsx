@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from "react"
 import styled, { css } from "styled-components"
-import top_fixed_bg from "../images/top_fixed_bg.png"
+import code from "../images/code.jpg";
 import { ThemeType } from "../styles"
 import { PageLayout, SectionContainer } from "../components"
 
@@ -9,6 +9,7 @@ import {
   ContactMeSection,
   WhatIDoSection,
   MySkills,
+  BadgesCertifications,
 } from "../components/home"
 
 const TopBg = styled.div`
@@ -42,7 +43,31 @@ const TopBg = styled.div`
       );
     }
 
-    @media only screen and (min-width: ${theme.desktop1}) and (max-width: ${theme.desktop2}) {
+    @media only screen and (min-width: ${theme.desktop1}) {
+      @keyframes show {
+        from {
+          box-shadow: 0px 0px 25px 15px rgb(44, 62, 65);
+          transform: skew(2deg) translate(8px, -8px);
+        }
+        to {
+          box-shadow: 0px 0px 15px 15px rgb(44, 62, 80);
+          transform: skew(0deg) translate(0px, 0px);
+        }
+      }
+      & > div {
+        width: 350px;
+        height: 350px;
+        margin: 80px;
+        border-radius: 25% 50%;
+        background-image: url(${code});
+        background-repeat: no-repeat;
+        cursor: pointer;
+        border: 8px dashed rgb(44, 62, 80);
+        animation-name: show;
+        animation-duration: 1s;
+        animation-direction: alternate-reverse;
+        animation-iteration-count: infinite;
+      }
     }
     @media only screen and (min-width: ${theme.desktop2}) and (max-width: ${theme.desktop3}) {
       clip-path: polygon(
@@ -71,7 +96,9 @@ const IndexPage = () => {
 
   return (
     <PageLayout skipToContent={skipToContent}>
-      <TopBg />
+      <TopBg>
+        {/* <div /> */}
+      </TopBg>
       <SectionContainer>
         <IntroSection />
       </SectionContainer>
@@ -84,6 +111,7 @@ const IndexPage = () => {
       <SectionContainer>
         <ContactMeSection ref={contacts} />
       </SectionContainer>
+      <BadgesCertifications/>
     </PageLayout>
   )
 }
