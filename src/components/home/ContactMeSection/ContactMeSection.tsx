@@ -73,6 +73,14 @@ export const ContactMeSection = forwardRef<HTMLFormElement>(({}, ref) => {
             <Button raised type="submit" disabled>
               Send Message
             </Button>
+            <Button
+              as="a"
+              href="mailto:sndegwa.n@outlook.com"
+              target="_blank"
+              style={{ marginLeft: "10px" }}
+            >
+              Send an email instead
+            </Button>
           </RightSide>
         </ContactMeSectionWrapper>
       )}

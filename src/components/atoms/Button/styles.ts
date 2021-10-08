@@ -4,6 +4,11 @@ import { ColorType } from "../types";
 
 export const ButtonWrapper = styled.button`
 ${({ raised, color, theme }: { raised: boolean; color: ColorType; theme: ThemeType }) => css`
+display:inline-flex;
+justify-content:center;
+align-items:center;
+cursor:pointer;
+text-decoration:none;
 padding: 0.6rem 1rem;
 border: none;
 font-weight:600;
