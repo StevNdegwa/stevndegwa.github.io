@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from "react"
 import styled, { css } from "styled-components"
-import code from "../images/code.jpg";
+import code from "../images/code.jpg"
 import { ThemeType } from "../styles"
 import { PageLayout, SectionContainer } from "../components"
 
@@ -32,6 +32,49 @@ const TopBg = styled.div`
         58% 600px,
         80% 0
       );
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      & div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      & > div {
+        width: 200px;
+        height: 200px;
+        margin: 50px;
+        border-radius: 50%;
+        border: 8px dashed ${theme.colors.grey[500]};
+        position: absolute;
+        bottom: 300px;
+        left: calc(50% - 100px);
+        animation-name: spin;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        & > div {
+          width: 80%;
+          height: 80%;
+          border-radius: 50%;
+          border: 8px solid ${theme.colors.grey[500]};
+          border-bottom-color: transparent;
+          animation-name: spin;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+          & > div {
+            width: 40%;
+            height: 40%;
+            border-radius: 50%;
+            border: 8px solid ${theme.colors.grey[500]};
+            background-color: ${theme.colors.grey[500]};
+          }
+        }
+      }
     }
     @media only screen and (min-width: ${theme.tabletBreakdown2}) and (max-width: ${theme.desktop2}) {
       clip-path: polygon(
@@ -41,6 +84,11 @@ const TopBg = styled.div`
         58% 500px,
         90% 0
       );
+      & > div {
+        width: 150px;
+        height: 150px;
+        bottom: 350px;
+      }
     }
 
     @media only screen and (min-width: ${theme.desktop1}) {
@@ -54,7 +102,7 @@ const TopBg = styled.div`
           transform: skew(0deg) translate(0px, 0px);
         }
       }
-      & > div {
+      & > section {
         width: 350px;
         height: 350px;
         margin: 80px;
@@ -98,6 +146,11 @@ const IndexPage = () => {
     <PageLayout skipToContent={skipToContent}>
       <TopBg>
         {/* <div /> */}
+        <div>
+          <div>
+            <div></div>
+          </div>
+        </div>
       </TopBg>
       <SectionContainer>
         <IntroSection />
@@ -111,7 +164,7 @@ const IndexPage = () => {
       <SectionContainer>
         <ContactMeSection ref={contacts} />
       </SectionContainer>
-      <BadgesCertifications/>
+      <BadgesCertifications />
     </PageLayout>
   )
 }

@@ -30,13 +30,27 @@ ${({ theme }: { theme: ThemeType }) => css`
       & > div {
         &:first-of-type {
           font-size: 1.4rem;
-          color: hsla(145, 61%, 59%, 1);
           text-align: left;
-          border-bottom: 4px double hsla(145, 61%, 59%, 1);
+          color:white;
+          border-bottom: 4px double currentColor;
+        }
+        @keyframes animatedGradient {
+          from {
+            background-size: 100%;
+          }
+          to {
+            background-size: 250%;
+          }
         }
         &:last-of-type {
           font-size: 3rem;
           font-weight: bolder;
+          background:linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
+          background-clip:text;
+          -webkit-background-clip:text;
+          color:transparent;
+          animation: animatedGradient 1s infinite ease;
+          animation-direction: alternate;
         }
       }
     }

@@ -36,10 +36,10 @@ const Menu: FC<MenuProps> = memo(({ expanded, close }) => {
             <span>⇠</span> &nbsp;
             <Link to="/projects">My Projects</Link>
           </li>
-          <li>
+          {/* <li>
             <span>⇠</span> &nbsp;
             <Link to="/contacts">My Contacts</Link>
-          </li>
+          </li> */}
         </ul>
       </MenuLinks>
       <MenuFooter>Copyright @ {new Date().getFullYear()}</MenuFooter>

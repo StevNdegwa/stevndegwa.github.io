@@ -47,7 +47,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public -b site11"
+    "deploy": "gatsby build && gh-pages -d public -b site12"
   },
   "repository": {
     "type": "git",

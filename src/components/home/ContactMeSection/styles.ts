@@ -66,6 +66,9 @@ ${({ theme }: { theme: ThemeType }) => css`
   &>div{
     margin-bottom:1rem;
   }
+  &>button{
+    margin:10px;
+  }
   @media only screen and (min-width: ${theme.tabletBreakdown1}){
     width: 500px;
     height:350px;

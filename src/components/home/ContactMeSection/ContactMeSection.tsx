@@ -79,7 +79,7 @@ export const ContactMeSection = forwardRef<HTMLFormElement>(({}, ref) => {
               target="_blank"
               style={{ marginLeft: "10px" }}
             >
-              Send an email instead
+              Send an email
             </Button>
           </RightSide>
         </ContactMeSectionWrapper>
