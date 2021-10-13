@@ -54,7 +54,6 @@ const TopBg = styled.div`
         position: absolute;
         bottom: 300px;
         left: calc(50% - 100px);
-        animation-name: spin;
         animation-duration: 10s;
         animation-iteration-count: infinite;
         & > div {
@@ -63,7 +62,6 @@ const TopBg = styled.div`
           border-radius: 50%;
           border: 8px solid ${theme.colors.grey[500]};
           border-bottom-color: transparent;
-          animation-name: spin;
           animation-duration: 3s;
           animation-iteration-count: infinite;
           & > div {
