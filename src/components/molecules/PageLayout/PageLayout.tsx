@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from "react"
+import React, { FC, useEffect } from "react"
 import Helmet from "react-helmet"
 import { ThemeProvider } from "styled-components"
 import { IconContext } from "react-icons"
@@ -20,6 +20,16 @@ export const PageLayout: FC<PageLayoutProps> = ({
   skipToContent,
   ...props
 }) => {
+  useEffect(() => {
+    ;(window as any).dataLayer = (window as any).dataLayer || []
+    function gtag(ar?: any, ar2?: any) {
+      (window as any).dataLayer.push(arguments)
+    }
+    gtag("js", new Date())
+
+    gtag("config", "G-CWK3FTBE7K")
+  }, [])
+
   return (
     <ThemeProvider theme={theme}>
       <IconContext.Provider value={{ className: "icon" }}>
@@ -48,6 +58,11 @@ export const PageLayout: FC<PageLayoutProps> = ({
               href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
               rel="stylesheet"
             />
+            {/* Global site tag (gtag.js) - Google Analytics */}
+            <script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=G-CWK3FTBE7K"
+            ></script>
           </Helmet>
           <PageContent>
             <SkipToContent tabIndex={1} onClick={skipToContent}>
