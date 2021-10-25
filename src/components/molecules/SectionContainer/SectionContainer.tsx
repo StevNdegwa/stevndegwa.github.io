@@ -1,5 +1,6 @@
-import React, { CSSProperties, FC, useEffect, useRef } from "react"
-import { styleElementInView } from "../../../hooks"
+import React, { CSSProperties, FC } from "react"
+import { useInView } from "react-intersection-observer"
+import { variants } from "./framer"
 import { SectionContainerWrapper } from "./styles"
 
 export interface SectionContainerProps {
@@ -12,16 +13,19 @@ export const SectionContainer: FC<SectionContainerProps> = ({
   style,
   ...props
 }) => {
-  const section = useRef(null)
-  useEffect(() => {
-    if (section.current) {
-      const observer = styleElementInView({ transform: "translate(0,0)" })
-      observer?.observe(section.current)
-    }
-  }, [section])
+  const { ref, inView } = useInView({
+    threshold: 0,
+  })
 
   return (
-    <SectionContainerWrapper ref={section} style={style} {...props}>
+    <SectionContainerWrapper
+      variants={variants}
+      animate={inView ? "inView" : "outView"}
+      transition={{ duration: 0.5 }}
+      ref={ref}
+      style={style}
+      {...props}
+    >
       {children}
     </SectionContainerWrapper>
   )
