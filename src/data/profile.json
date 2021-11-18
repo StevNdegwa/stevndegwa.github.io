@@ -1,5 +1,6 @@
 {
   "skills": [
+    "Java",
     "Javascript (Es6+)",
     "HTML5",
     "CSS3",
@@ -13,6 +14,7 @@
     "Chakra UI",
     "styled-components",
     "@emotion/react",
+    "Framer Motion",
     "Relay",
     "D3.js",
     "visx",
