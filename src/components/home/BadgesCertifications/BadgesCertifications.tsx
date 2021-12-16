@@ -1,6 +1,7 @@
 import React from "react"
 import { FaCalendarAlt } from "react-icons/fa"
 import { useStaticQuery, graphql } from "gatsby"
+import { Image } from "cloudinary-react";
 import { SectionContainer } from "../../molecules"
 import {
   BadgesCertificationsWrapper,
@@ -14,7 +15,7 @@ import {
 type Badge = {
   title: string
   by: string
-  iconLink: string
+  iconId: string
   from: string
   link: string
   homepage: string
@@ -22,23 +23,29 @@ type Badge = {
 
 export const BadgesCertifications = () => {
   const {
-    dataJson: { badges },
+    allJson: { edges },
   } = useStaticQuery(
     graphql`
       query {
-        dataJson {
-          badges {
-            by
-            from
-            link
-            iconLink
-            title
-            homepage
+        allJson {
+          edges {
+            node {
+              badges {
+                by
+                from
+                homepage
+                iconId
+                link
+                title
+              }
+            }
           }
         }
       }
     `
   )
+
+  const { node: { badges } } = edges.find((edge: any) => Boolean(edge.node.badges))
 
   return (
     <BadgesCertificationsWrapper>
@@ -54,10 +61,11 @@ export const BadgesCertifications = () => {
               <section>
                 <div>
                   <a href={badge.homepage} target="_blank">
-                    <img
+                    {/* <img
                       src={badge.iconLink}
                       alt={`${badge.title} by ${badge.from}`}
-                    />
+                    /> */}
+                    <Image publicId={badge.iconId} width="50"/>
                   </a>
                 </div>
                 <div>

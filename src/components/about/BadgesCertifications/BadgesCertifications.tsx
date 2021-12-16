@@ -14,7 +14,7 @@ import {
 type Badge = {
   title: string
   by: string
-  iconLink: string
+  iconId: string
   from: string
   link: string
   homepage: string
@@ -22,23 +22,35 @@ type Badge = {
 
 export const BadgesCertifications = () => {
   const {
-    dataJson: { badges },
+    allJson: {
+      edges: [
+        ,
+        {
+          node: { badges },
+        },
+      ],
+    },
   } = useStaticQuery(
     graphql`
       query {
-        dataJson {
-          badges {
-            by
-            from
-            link
-            iconLink
-            title
-            homepage
+        allJson {
+          edges {
+            node {
+              badges {
+                by
+                from
+                homepage
+                iconId
+                link
+                title
+              }
+            }
           }
         }
       }
     `
   )
+
 
   return (
     <BadgesCertificationsWrapper>
@@ -55,7 +67,7 @@ export const BadgesCertifications = () => {
                 <div>
                   <a href={badge.homepage} target="_blank">
                     <img
-                      src={badge.iconLink}
+                      src={badge.iconId}
                       alt={`${badge.title} by ${badge.from}`}
                     />
                   </a>

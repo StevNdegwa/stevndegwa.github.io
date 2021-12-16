@@ -4,16 +4,24 @@ import { MySkillsWrapper, MySkillsTitle, MySkillsList } from "./styles"
 
 export const MySkills = () => {
   const {
-    dataJson: { skills },
+    allJson: { edges },
   } = useStaticQuery(
     graphql`
-      query {
-        dataJson(skills: {}) {
-          skills
+      query MyQuery {
+        allJson {
+          edges {
+            node {
+              skills
+            }
+          }
         }
       }
     `
   )
+
+  const {
+    node: { skills },
+  } = edges.find((edge: any) => Boolean(edge.node.skills))
 
   return (
     <MySkillsWrapper>

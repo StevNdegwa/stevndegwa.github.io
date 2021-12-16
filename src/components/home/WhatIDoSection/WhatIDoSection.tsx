@@ -1,9 +1,10 @@
 import React, { FC } from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { FormattedMessage } from "react-intl";
 import web_design_development from "../../../images/web_design_web_ux.svg"
 import web_development from "../../../images/web_development.svg"
 import data_visualization from "../../../images/data_visualization.svg"
 import { Button } from "../../atoms"
-import { useStaticQuery, graphql } from "gatsby"
 import Card from "./Card"
 
 import { WhatIDoSectionWrapper, LeftSide, RightSide } from "./styles"
@@ -16,16 +17,22 @@ export const WhatIDoSection: FC<WhatIDoSectionProps> = ({
   moveToContactsSection,
 }) => {
   const {
-    dataJson: { offers },
+    allJson: { edges },
   } = useStaticQuery(
     graphql`
       query {
-        dataJson(offers: {}) {
-          offers
+        allJson {
+          edges {
+            node {
+              offers
+            }
+          }
         }
       }
     `
   )
+
+  const { node: { offers } } = edges.find((edge: any) => Boolean(edge.node.offers));
 
   return (
     <WhatIDoSectionWrapper id="what_I_do">
@@ -56,7 +63,9 @@ export const WhatIDoSection: FC<WhatIDoSectionProps> = ({
         />
       </LeftSide>
       <RightSide>
-        <h1>What I offer</h1>
+        <h1>
+          <FormattedMessage id="what_i_offer" />
+        </h1>
         <ul>
           {offers.map((offer: string, index: number) => (
             <li key={index}>{offer}</li>

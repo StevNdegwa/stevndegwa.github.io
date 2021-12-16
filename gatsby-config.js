@@ -8,7 +8,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
-    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-transformer-json`,
+      options: {
+        typeName: 'json'
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
