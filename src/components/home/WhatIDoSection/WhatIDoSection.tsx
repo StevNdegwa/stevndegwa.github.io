@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage } from "react-intl"
 import web_design_development from "../../../images/web_design_web_ux.svg"
 import web_development from "../../../images/web_development.svg"
 import data_visualization from "../../../images/data_visualization.svg"
@@ -32,7 +32,9 @@ export const WhatIDoSection: FC<WhatIDoSectionProps> = ({
     `
   )
 
-  const { node: { offers } } = edges.find((edge: any) => Boolean(edge.node.offers));
+  const {
+    node: { offers },
+  } = edges.find((edge: any) => Boolean(edge.node.offers))
 
   return (
     <WhatIDoSectionWrapper id="what_I_do">
@@ -68,11 +70,13 @@ export const WhatIDoSection: FC<WhatIDoSectionProps> = ({
         </h1>
         <ul>
           {offers.map((offer: string, index: number) => (
-            <li key={index}>{offer}</li>
+            <li key={index}>
+              <FormattedMessage id={offer} />
+            </li>
           ))}
         </ul>
         <Button primary raised onClick={moveToContactsSection}>
-          Let's Talk
+          <FormattedMessage id="lets_talk" />
         </Button>
       </RightSide>
     </WhatIDoSectionWrapper>

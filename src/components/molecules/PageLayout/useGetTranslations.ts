@@ -34,17 +34,13 @@ export default function useGetTranslations() {
                   badges_and_certs
                 }
               }
-              languages {
-                ENGLISH
-                GERMAN
-              }
             }
           }
         }
       }
     `);
 
-  const { node: { translations, languages } } = edges.find((edge: any) => Boolean(edge.node.languages))
+  const { node: { translations } } = edges.find((edge: any) => Boolean(edge.node.translations))
 
-  return { translations, languages };
+  return { translations };
 }

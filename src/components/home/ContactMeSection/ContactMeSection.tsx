@@ -1,10 +1,13 @@
 import React, { forwardRef } from "react"
 import { Formik } from "formik"
 import { FaRegCheckCircle } from "react-icons/fa"
+import { FormattedMessage, useIntl } from "react-intl"
 import { Button, Input, TextArea, Checkbox } from "../../atoms"
 import { ContactMeSectionWrapper, LeftSide, RightSide } from "./styles"
 
 export const ContactMeSection = forwardRef<HTMLFormElement>(({}, ref) => {
+  const intl = useIntl()
+
   return (
     <Formik
       initialValues={{
@@ -25,17 +28,25 @@ export const ContactMeSection = forwardRef<HTMLFormElement>(({}, ref) => {
               <span>
                 <FaRegCheckCircle /> &nbsp;
               </span>
-              <span>I need help with</span>
+              <span>
+                <FormattedMessage id="I_need" />
+              </span>
             </h1>
             <ul>
               <li>
-                <Checkbox>Web design</Checkbox>
+                <Checkbox>
+                  <FormattedMessage id="web_design" />
+                </Checkbox>
               </li>
               <li>
-                <Checkbox>Web development</Checkbox>
+                <Checkbox>
+                  <FormattedMessage id="web_dev" />
+                </Checkbox>
               </li>
               <li>
-                <Checkbox>Data visualization</Checkbox>
+                <Checkbox>
+                  <FormattedMessage id="data_viz" />
+                </Checkbox>
               </li>
             </ul>
           </LeftSide>
@@ -45,7 +56,7 @@ export const ContactMeSection = forwardRef<HTMLFormElement>(({}, ref) => {
                 name="full_name"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Full name"
+                placeholder={intl.formatMessage({ id: "full_name" })}
                 value={values.full_name}
               />
               {errors.full_name}
@@ -55,7 +66,7 @@ export const ContactMeSection = forwardRef<HTMLFormElement>(({}, ref) => {
                 name="email"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Email e.g. sndegwa.n@outlook.com"
+                placeholder={intl.formatMessage({ id: "email" })}
                 value={values.email}
               />
               {errors.email}
@@ -63,7 +74,7 @@ export const ContactMeSection = forwardRef<HTMLFormElement>(({}, ref) => {
             <div>
               <TextArea
                 name="message"
-                placeholder="Message..."
+                placeholder={intl.formatMessage({ id: "message" })}
                 value={values.message}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -71,7 +82,7 @@ export const ContactMeSection = forwardRef<HTMLFormElement>(({}, ref) => {
               {errors.message}
             </div>
             <Button raised type="submit" disabled>
-              Send Message
+              <FormattedMessage id="send_message" />
             </Button>
             <Button
               as="a"
@@ -79,7 +90,7 @@ export const ContactMeSection = forwardRef<HTMLFormElement>(({}, ref) => {
               target="_blank"
               style={{ marginLeft: "10px" }}
             >
-              Send an email
+              <FormattedMessage id="send_email" />
             </Button>
           </RightSide>
         </ContactMeSectionWrapper>

@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, { forwardRef } from "react"
 import { ButtonWrapper } from "./styles"
 
 export interface IconButtonProps {
@@ -6,6 +6,12 @@ export interface IconButtonProps {
   [prop: string]: unknown
 }
 
-export const IconButton: FC<IconButtonProps> = ({ children, color, ...props }) => {
-  return <ButtonWrapper {...props}>{children}</ButtonWrapper>
-}
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
+  ({ children, color, ...props }, ref) => {
+    return (
+      <ButtonWrapper {...props} color={color} ref={ref}>
+        {children}
+      </ButtonWrapper>
+    )
+  }
+)

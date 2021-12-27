@@ -1,7 +1,8 @@
 import React from "react"
 import { FaCalendarAlt } from "react-icons/fa"
 import { useStaticQuery, graphql } from "gatsby"
-import { Image } from "cloudinary-react";
+import { Image } from "cloudinary-react"
+import { FormattedMessage } from "react-intl"
 import { SectionContainer } from "../../molecules"
 import {
   BadgesCertificationsWrapper,
@@ -45,7 +46,9 @@ export const BadgesCertifications = () => {
     `
   )
 
-  const { node: { badges } } = edges.find((edge: any) => Boolean(edge.node.badges))
+  const {
+    node: { badges },
+  } = edges.find((edge: any) => Boolean(edge.node.badges))
 
   return (
     <BadgesCertificationsWrapper>
@@ -53,7 +56,7 @@ export const BadgesCertifications = () => {
       <Circle2 />
       <SectionContainer style={{ marginBottom: "0px" }}>
         <BadgesCertificationsTitle>
-          Badges and Certifications
+          <FormattedMessage id="badges_and_certs" />
         </BadgesCertificationsTitle>
         <BadgesCertificationsItems>
           {badges.map((badge: Badge, index: number) => (
@@ -65,7 +68,7 @@ export const BadgesCertifications = () => {
                       src={badge.iconLink}
                       alt={`${badge.title} by ${badge.from}`}
                     /> */}
-                    <Image publicId={badge.iconId} width="50"/>
+                    <Image publicId={badge.iconId} width="50" />
                   </a>
                 </div>
                 <div>

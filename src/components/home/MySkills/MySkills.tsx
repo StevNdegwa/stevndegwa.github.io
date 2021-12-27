@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { FormattedMessage } from "react-intl"
 import { MySkillsWrapper, MySkillsTitle, MySkillsList } from "./styles"
 
 export const MySkills = () => {
@@ -26,7 +27,9 @@ export const MySkills = () => {
   return (
     <MySkillsWrapper>
       <MySkillsTitle>
-        <span>My skills</span>
+        <span>
+          <FormattedMessage id="my_skills" />
+        </span>
       </MySkillsTitle>
       <MySkillsList>
         {skills.map((skill: string, index: number) => (

@@ -34,7 +34,9 @@
     "Git",
     "Gitlab CI/CD",
     "Github Actions",
-    "Firebase"
+    "Firebase",
+    "Object-Oriented Programming",
+    "DSA"
   ],
   "badges": [
     {
@@ -79,12 +81,12 @@
     }
   ],
   "offers": [
-    "Usable web applications",
-    "Responsive web applications",
-    "Insightful solutions",
-    "Thoughtful design",
-    "User accessibility",
-    "Clear data representation",
-    "Test driven development"
+    "usability",
+    "responsiveness",
+    "insightful",
+    "thoughtful",
+    "accessibility",
+    "data_representation",
+    "test_driven"
   ]
 }

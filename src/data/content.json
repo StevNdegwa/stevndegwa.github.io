@@ -1,8 +1,7 @@
 {
-  "languages": {
-    "ENGLISH": "en-US",
-    "GERMAN": "de-DE"
-  },
+  "languages": [
+    { "name": "English", "key": "en-US" }
+  ],
   "translations": [
     {
       "locale": "en-US",

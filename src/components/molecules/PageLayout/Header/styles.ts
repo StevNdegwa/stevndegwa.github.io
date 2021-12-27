@@ -10,19 +10,23 @@ ${({ theme }: { theme: ThemeType }) => css`
   align-items:center;
   padding:0 1rem;
   background-color: ${theme.colors.dark};
-  & > a, button{
-    color:white;
+  & span{
+    display: inline-flex;
   }
   @media only screen and (min-width: ${theme.tabletBreakdown2}){
     padding: 0 2rem;
     height:6rem;
     background-color:transparent;
     & > span:last-of-type{
-      & button{
-        color:${theme.colors.secondary[400]};
-      }
       & a{
         color:${theme.colors.dark};
+      }
+    }
+  }
+  @media only screen and (max-width: ${theme.tabletBreakdown2}){
+    & > span:last-of-type{
+      & button{
+        color:white;
       }
     }
   }
