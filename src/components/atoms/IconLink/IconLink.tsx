@@ -15,7 +15,7 @@ export const IconLink: FC<IconLinkProps> = memo(
     const id = label.replace(" ", "_");
     
     return (
-      <LinkWrapper>
+      <LinkWrapper color={color}>
         {to ? (
           <Link to={to} {...props}>
             {children}

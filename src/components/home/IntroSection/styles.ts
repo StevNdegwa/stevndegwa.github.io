@@ -57,7 +57,7 @@ ${({ theme }: { theme: ThemeType }) => css`
     &:last-of-type {
       text-align: left;
       font-size: 1.3rem;
-      font-family: "Merienda", cursive;
+      font-family: var(--font2);
       color: hsla(200, 16%, 62%, 1);
       & > span {
         font-weight: 600;
@@ -112,6 +112,106 @@ ${({ theme }: { theme: ThemeType }) => css`
         }
       }
     }
+  }
+`}
+`;
+
+export const IntroSectionNameNew = styled.div`
+${({ theme }: { theme: ThemeType }) => css`
+& > div {
+    padding: 0.5rem;
+    &:first-of-type {
+      & > div {
+        &:first-of-type {
+          font-size: 1.4rem;
+          color:white;
+          border-bottom: 4px double currentColor;
+        }
+        @keyframes animatedGradient {
+          from {
+            background-size: 100%;
+          }
+          to {
+            background-size: 250%;
+          }
+        }
+        &:last-of-type {
+          font-size: 3rem;
+          font-weight: bolder;
+          background:linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
+          background-clip:text;
+          -webkit-background-clip:text;
+          color:transparent;
+          animation: animatedGradient 1s infinite ease;
+          animation-direction: alternate;
+        }
+      }
+    }
+    &:last-of-type {
+      text-align: left;
+      font-size: 1.3rem;
+      font-family: var(--font2);
+      color: hsla(200, 16%, 62%, 1);
+      & > span {
+        font-weight: 600;
+      }
+    }
+  }
+}
+@media only screen and (min-width: ${theme.phoneBreakdown}) and (max-width: ${theme.tabletBreakdown1}){
+& > div {
+    padding: 0.5rem;
+    &:first-of-type {
+      & > div {
+        &:first-of-type {
+          font-size: 1.4rem;
+        }
+        &:last-of-type {
+          font-size: 4rem;
+        }
+      }
+    }
+    &:last-of-type {
+      font-size: 1.3rem;
+    }
+  }
+}
+  @media only screen and (min-width: ${theme.tabletBreakdown1}) and (max-width: ${theme.tabletBreakdown2}){
+& > div {
+    padding: 0.5rem;
+    &:first-of-type {
+      & > div {
+        &:first-of-type {
+          font-size: 1.4rem;
+        }
+        &:last-of-type {
+          font-size: 4.5rem;
+        }
+      }
+    }
+    &:last-of-type {
+      font-size: 1.3rem;
+    }
+  }
+}
+  @media only screen and (min-width: ${theme.tabletBreakdown2}){
+& > div {
+    padding: 0.5rem;
+    &:first-of-type {
+      & > div {
+        &:first-of-type {
+          font-size: 1.4rem;
+        }
+        &:last-of-type {
+          font-size: 4rem;
+        }
+      }
+    }
+    &:last-of-type {
+      font-size: 1.3rem;
+    }
+  }
+}
   }
 `}
 `;

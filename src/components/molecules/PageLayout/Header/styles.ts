@@ -17,16 +17,14 @@ ${({ theme }: { theme: ThemeType }) => css`
     padding: 0 2rem;
     height:6rem;
     background-color:transparent;
-    & > span:last-of-type{
-      & a{
-        color:${theme.colors.dark};
-      }
-    }
   }
   @media only screen and (max-width: ${theme.tabletBreakdown2}){
     & > span:last-of-type{
       & button{
-        color:white;
+        color:white !important;
+      }
+      & a {
+        color: white !important;
       }
     }
   }

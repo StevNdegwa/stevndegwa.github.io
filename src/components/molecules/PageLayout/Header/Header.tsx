@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useMemo, useState } from "react"
-import { FaBars, FaGithub, FaHome } from "react-icons/fa"
+import { FaBars, FaGithub, FaHome, FaMoon } from "react-icons/fa"
 import { useStaticQuery, graphql } from "gatsby"
 import { useLocaleContext } from "../../../../context"
 import { IconButton, IconLink } from "../../../atoms"
@@ -7,7 +7,11 @@ import { DropDown } from "../../DropDown"
 import { HeaderWrapper } from "./styles"
 import Menu from "../Menu"
 
-const Header: FC = () => {
+export interface IHeaderProps {
+  toggleThemeMode: () => void
+}
+
+const Header: FC<IHeaderProps> = ({ toggleThemeMode }) => {
   const [menuExpanded, setMenuExpanded] = useState<boolean>(false)
   const { setLocale } = useLocaleContext()
 
@@ -60,7 +64,7 @@ const Header: FC = () => {
   return (
     <HeaderWrapper>
       <span>
-        <IconLink to="/" label="Home page">
+        <IconLink to="/" label="Home page" color="secondary">
           <FaHome aria-hidden="true" />
         </IconLink>
       </span>
@@ -73,6 +77,9 @@ const Header: FC = () => {
           <FaGithub aria-hidden="true" />
         </IconLink>
         <DropDown items={languageItems} handleSelectedItem={selectLanguage} />
+        {/* <IconButton onClick={toggleThemeMode}>
+          <FaMoon />
+        </IconButton> */}
         <IconButton color="secondary" onClick={openMenu}>
           <FaBars />
         </IconButton>

@@ -17,7 +17,8 @@ z-index:-1;
 list-style-type:none;
 border-radius:0.5rem;
 overflow:hidden;
-background-color:white;
+background-color:var(--bgColor);
+box-shadow: 0px 5px 13px var(--shadowColor);
 & > li{
   padding: 0.3rem 0.5rem;
   cursor:pointer;
@@ -28,6 +29,5 @@ background-color:white;
     font-weight: bold;
   }
 }
-box-shadow: 0px 5px 13px ${theme.colors.grey[100]};
 `}
 `;

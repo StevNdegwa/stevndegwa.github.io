@@ -125,6 +125,15 @@ const TopBg = styled.div`
       );
     }
   `}
+`;
+
+const Quote = styled.q`
+  font-size: 2rem;
+  display: block;
+  text-align: center;
+  margin: auto;
+  padding: 1re 3rem;
+  font-family: var(--font2);
 `
 
 const IndexPage = () => {
@@ -158,6 +167,12 @@ const IndexPage = () => {
       </SectionContainer>
       <SectionContainer>
         <MySkills />
+      </SectionContainer>
+      <SectionContainer>
+        <Quote>
+        It is through practice in the small that professionals gain proficiency
+        and trust for practice in the large
+      </Quote>
       </SectionContainer>
       <SectionContainer>
         <ContactMeSection ref={contacts} />

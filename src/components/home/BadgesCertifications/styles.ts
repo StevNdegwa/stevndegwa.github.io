@@ -2,10 +2,8 @@ import styled, { css } from "styled-components";
 import { ThemeType } from "../../../styles";
 
 export const BadgesCertificationsWrapper = styled.div`
-${({ theme }: { theme: ThemeType }) => css`
-background-color:${theme.colors.grey[100]};
+background-color:var(--badgesAndCertificationBg);
 position:relative;
-`}
 `;
 
 export const Circle1 = styled.div`
@@ -54,13 +52,12 @@ ${({ theme }: { theme: ThemeType }) => css`
 `;
 
 export const Item = styled.li`
-${({ theme }: { theme: ThemeType }) => css`
 width: 240px;
 height: 240px;
 display: flex;
-background-color:hsla(360, 100%, 100%, 0.4);
+background-color:var(--badgesCertificationCardBg);
 backdrop-filter: blur(20px);
-box-shadow: 0px 0px 15px ${theme.colors.grey[200]};
+box-shadow: 0px 0px 15px var(--shadowColor);
 flex-direction:column;
 justify-content:space-around;
 border-radius:15px;
@@ -68,7 +65,7 @@ margin: 0.5rem 1rem 1rem 0;
 box-shadow:none;
 transition:box-shadow 500ms;
 &:hover{
-  box-shadow: 0px 0px 25px ${theme.colors.grey[300]};
+  box-shadow: 0px 0px 25px var(--shadowColor);
 }
 &>section{
   height:40px;
@@ -82,7 +79,7 @@ transition:box-shadow 500ms;
   text-align:center;
   border-radius: 8px;
   &>div{
-    box-shadow: 0px 0px 8px ${theme.colors.grey[100]};
+    box-shadow: 0px 0px 8px var(--shadowColor);
     border-radius: 8px;
     &:first-of-type{
       width:60px;
@@ -113,7 +110,7 @@ transition:box-shadow 500ms;
   &:last-of-type{
     height:50px;
     line-height: 50px;
-    box-shadow: 0px 0px 8px ${theme.colors.grey[100]};
+    box-shadow: 0px 0px 8px var(--shadowColor);
     & > a{
       text-decoration:none;
       color:inherit;
@@ -121,5 +118,4 @@ transition:box-shadow 500ms;
     }
   }
 }
-`}
-`
+`;

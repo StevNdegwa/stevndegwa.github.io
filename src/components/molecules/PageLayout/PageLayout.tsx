@@ -12,6 +12,7 @@ import Footer from "./Footer"
 import { PageAlert } from "../PageAlert"
 import { LocaleContext } from "../../../context"
 import useGetTranslations from "./useGetTranslations"
+import useThemeMode from "./useThemeMode"
 import { PageLayoutWrapper, PageContent, SkipToContent } from "./styles"
 
 export interface PageLayoutProps {
@@ -26,6 +27,8 @@ export const PageLayout: FC<PageLayoutProps> = ({
 }) => {
   const { translations } = useGetTranslations()
   const [locale, setLocale] = useState("en-US")
+
+  const { themeMode, toggleThemeMode } = useThemeMode()
 
   useEffect(() => {
     ;(window as any).dataLayer = (window as any).dataLayer || []
@@ -60,7 +63,7 @@ export const PageLayout: FC<PageLayoutProps> = ({
                 <CloudinaryContext cloudName="dnixr3nel">
                   <PageAlert>Site still in development</PageAlert>
                   <PageLayoutWrapper {...props}>
-                    <GlobalStyles />
+                    <GlobalStyles mode={themeMode} />
                     <Helmet>
                       <title>Stephen Ng'ang'a | Software developer</title>
                       <link href="" rel="stylesheet" />
@@ -96,7 +99,7 @@ export const PageLayout: FC<PageLayoutProps> = ({
                       <SkipToContent tabIndex={1} onClick={skipToContent}>
                         Skip to content
                       </SkipToContent>
-                      <Header />
+                      <Header toggleThemeMode={toggleThemeMode} />
                       {children}
                     </PageContent>
                     <Footer />

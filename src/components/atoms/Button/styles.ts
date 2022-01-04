@@ -24,7 +24,7 @@ text-transform:uppercase;
     margin:0.2rem;
     color:white;
 }
-${raised && css`box-shadow: 0px 0px 8px ${theme.colors.grey[200]};`}
+${raised && css`box-shadow: 0px 0px 8px var(--shadowColor);`}
 ${color === "primary" ?
             css`
   background-color: ${theme.colors.primary[400]};

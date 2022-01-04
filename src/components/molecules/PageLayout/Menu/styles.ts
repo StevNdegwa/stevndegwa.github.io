@@ -13,7 +13,8 @@ position:fixed;
 top:0;
 left:0;
 z-index:${theme.zIndices.popover};
-background-color:white;
+background-color:var(--bgColor);
+color:var(--textColor);
 font-family: 'Merienda', cursive;
 `}
 `;
@@ -26,7 +27,7 @@ justify-content:flex-end;
 align-items:center;
 padding:0 1rem;
 & button{
-  color:${theme.colors.dark};
+  color:var(--textColor);
 }
 @media only screen and (min-width: ${theme.tabletBreakdown2}){
   padding: 0 2rem;
@@ -46,7 +47,7 @@ height:calc(100% - 8rem);
     font-size:2.5rem;
     display:flex;
     justify-content:flex-end;
-    color: hsla(210, 29%, 24%, 1);
+    color:var(--textColor);
     &:hover{
       color: hsla(145, 61%, 59%, 1);
       & > span{

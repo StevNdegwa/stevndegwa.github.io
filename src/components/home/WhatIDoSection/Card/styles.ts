@@ -4,19 +4,19 @@ import { ThemeType } from "../../../../styles";
 export const CardWrapper = styled.div`
 ${({ theme }: { theme: ThemeType }) => css`
 width:150px;
-height:150px;background-color:hsla(360, 100%, 100%, 0.8);
+height:150px;
+background-color:var(--whatIdoSectionCard);
 backdrop-filter: blur(20px);
-box-shadow: 0px 0px 15px ${theme.colors.grey[200]};
 border-radius:25px;
 display:flex;
 justify-content:center;
 align-items:center;
-box-shadow: 0px 4px 4px ${theme.colors.grey[100]};
+box-shadow: 0px 4px 4px var(--shadowColor);
 margin: 10px;
 transform: scale(0.5);
 transition: transform 500ms;
 &:hover{
-  box-shadow: 0px 4px 10px ${theme.colors.grey[100]};
+  box-shadow: 0px 4px 10px var(--shadowColor);
 }
 &>div{
   width:100px;
@@ -27,7 +27,7 @@ transition: transform 500ms;
   width:200px;
   height:200px;
   border-radius:25px;
-  box-shadow: 0px 8px 25px ${theme.colors.grey[100]};
+  box-shadow: 0px 8px 25px var(--shadowColor);
   &>div{
     width:150px;
     max-height:150px;
@@ -37,7 +37,7 @@ transition: transform 500ms;
   width:300px;
   height:300px;
   border-radius:50px;
-  box-shadow: 0px 8px 25px ${theme.colors.grey[100]};
+  box-shadow: 0px 8px 25px var(--shadowColor);
   &>div{
     width:200px;
     max-height:200px;

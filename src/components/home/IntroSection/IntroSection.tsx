@@ -1,10 +1,10 @@
 import React, { FC, memo } from "react"
 import { FormattedMessage } from "react-intl"
-import { IntroSectionWrapper, IntroSectionName } from "./styles"
+import { IntroSectionWrapper, IntroSectionNameNew } from "./styles"
 
 export const IntroSection: FC = memo(() => (
   <IntroSectionWrapper>
-    <IntroSectionName>
+    <IntroSectionNameNew>
       <div>
         <div>
           👋 <FormattedMessage id="my_name" />
@@ -14,6 +14,6 @@ export const IntroSection: FC = memo(() => (
       <div>
         <FormattedMessage id="I_am" />
       </div>
-    </IntroSectionName>
+    </IntroSectionNameNew>
   </IntroSectionWrapper>
 ))
