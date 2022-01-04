@@ -12,7 +12,7 @@ ${({ theme }: { theme: ThemeType }) => css`
   @media only screen and (min-width: ${theme.tabletBreakdown2}){
     height:650px;
     display:flex;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items:center;
   }
 `}
@@ -95,7 +95,6 @@ margin-bottom:40px;
 export const RightSide = styled.div`
 ${({ theme }: { theme: ThemeType }) => css`
 width:90%;
-margin:auto;
 &>h1{
   font-size:2rem;
 }

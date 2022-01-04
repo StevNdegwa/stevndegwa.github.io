@@ -34,6 +34,7 @@ ${({ theme }: { theme: ThemeType }) => css`
   @media only screen and (min-width: ${theme.tabletBreakdown1}){
     width: 430px;
     height:420px;
+    margin:0px;
     &>h1{
       height:80px;
       line-height:80px;
@@ -50,7 +51,7 @@ ${({ theme }: { theme: ThemeType }) => css`
       flex-direction:column;
       justify-content:space-between;
       font-size:2rem;
-      margin-left:100px;
+      margin-left:50px;
     }
   }
   @media only screen and (min-width: ${theme.tabletBreakdown1}) and (max-width: ${theme.tabletBreakdown2}){
@@ -72,6 +73,7 @@ ${({ theme }: { theme: ThemeType }) => css`
   @media only screen and (min-width: ${theme.tabletBreakdown1}){
     width: 500px;
     height:350px;
+    margin:0px;
     &>div{
       margin-bottom:2rem;
     }
