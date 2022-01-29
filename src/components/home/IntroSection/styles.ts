@@ -118,6 +118,7 @@ ${({ theme }: { theme: ThemeType }) => css`
 
 export const IntroSectionNameNew = styled.div`
 ${({ theme }: { theme: ThemeType }) => css`
+width: fit-content;
 & > div {
     padding: 0.5rem;
     &:first-of-type {
@@ -126,6 +127,7 @@ ${({ theme }: { theme: ThemeType }) => css`
           font-size: 1.4rem;
           color:white;
           border-bottom: 4px double currentColor;
+          box-shadow: 1rem 5px 10px ${theme.colors.dark} inset;
         }
         @keyframes animatedGradient {
           from {

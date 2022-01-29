@@ -1,18 +1,16 @@
-import React, { FC, useCallback, useMemo, useState } from "react"
-import { FaBars, FaGithub, FaHome, FaMoon } from "react-icons/fa"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { FC, useCallback, useMemo } from "react"
+import { FaBars, FaGithub, FaHome, FaGlobe } from "react-icons/fa"
+import { useStaticQuery, graphql, navigate } from "gatsby"
+import { IconLink } from "../../../atoms"
 import { useLocaleContext } from "../../../../context"
-import { IconButton, IconLink } from "../../../atoms"
 import { DropDown } from "../../DropDown"
 import { HeaderWrapper } from "./styles"
-import Menu from "../Menu"
 
 export interface IHeaderProps {
   toggleThemeMode: () => void
 }
 
 const Header: FC<IHeaderProps> = ({ toggleThemeMode }) => {
-  const [menuExpanded, setMenuExpanded] = useState<boolean>(false)
   const { setLocale } = useLocaleContext()
 
   const {
@@ -26,6 +24,10 @@ const Header: FC<IHeaderProps> = ({ toggleThemeMode }) => {
               languages {
                 name
                 key
+              },
+              routes {
+                name
+                path
               }
             }
           }
@@ -35,8 +37,8 @@ const Header: FC<IHeaderProps> = ({ toggleThemeMode }) => {
   )
 
   const {
-    node: { languages },
-  } = edges.find((edge: any) => Boolean(edge.node.languages))
+    node: { languages, routes },
+  } = edges.find((edge: any) => Boolean(edge.node.languages && edge.node.routes))
 
   const languageItems = useMemo(
     () =>
@@ -51,15 +53,14 @@ const Header: FC<IHeaderProps> = ({ toggleThemeMode }) => {
     if (language) {
       setLocale?.(language.value)
     }
-  }, [])
+  }, []);
 
-  const openMenu = useCallback(() => {
-    setMenuExpanded(true)
-  }, [setMenuExpanded])
 
-  const closeMenu = useCallback(() => {
-    setMenuExpanded(false)
-  }, [])
+  const moveToPage = useCallback((page: any) => navigate(page.value), [])
+
+  const routItems = useMemo(() => routes.map(
+    (route:any) => ({ value: route.path, label: route.name })
+  ), []);
 
   return (
     <HeaderWrapper>
@@ -76,15 +77,20 @@ const Header: FC<IHeaderProps> = ({ toggleThemeMode }) => {
         >
           <FaGithub aria-hidden="true" />
         </IconLink>
-        <DropDown items={languageItems} handleSelectedItem={selectLanguage} />
+        <DropDown
+          items={languageItems}
+          handleSelectedItem={selectLanguage}
+          icon={<FaGlobe />}
+        />
+        <DropDown
+          items={routItems}
+          handleSelectedItem={moveToPage}
+          icon={<FaBars color="#2db868" />}
+        />
         {/* <IconButton onClick={toggleThemeMode}>
           <FaMoon />
         </IconButton> */}
-        <IconButton color="secondary" onClick={openMenu}>
-          <FaBars />
-        </IconButton>
       </span>
-      <Menu expanded={menuExpanded} close={closeMenu} />
     </HeaderWrapper>
   )
 }

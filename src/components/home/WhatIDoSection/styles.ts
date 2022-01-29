@@ -101,7 +101,7 @@ width:90%;
 &>ul{
   &>li{
     font-size: 1.2rem;
-    margin: 1rem 2rem;
+    margin: 1rem 1.5rem;
   }
 }
 @media only screen and (min-width: ${theme.tabletBreakdown1}) and (max-width: ${theme.tabletBreakdown2}){
@@ -112,7 +112,7 @@ width:90%;
   &>ul{
     &>li{
       font-size: 1.3rem;
-      margin: 1.2rem 2rem;
+      margin: 1.2rem 0;
     }
   }
 }
@@ -130,7 +130,7 @@ width:90%;
   &>ul{
     &>li{
       font-size: 1.8rem;
-      margin: 1.5rem 0 1.5rem 4rem;
+      margin: 1.5rem 0;
     }
   }
 }

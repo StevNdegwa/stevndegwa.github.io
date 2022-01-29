@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 import { ThemeType } from "../../../styles";
+import { Side } from "../types";
 
 export const DropDownWrapper = styled.div`
 width: fit-content;
@@ -9,10 +10,10 @@ position: relative;
 `;
 
 export const DropDownItems = styled(motion.ul)`
-${({ theme, highlighted }: { theme: ThemeType, highlighted: number }) => css`
+${({ theme, highlighted, side }: { theme: ThemeType, highlighted: number, side: Side }) => css`
 position: absolute;
 top:100%;
-left:0;
+${side === Side.LEFT ? "left:0" : "right:0"};
 z-index:-1;
 list-style-type:none;
 border-radius:0.5rem;

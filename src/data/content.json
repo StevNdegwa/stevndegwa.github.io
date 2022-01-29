@@ -1,7 +1,9 @@
 {
-  "languages": [
-    { "name": "English", "key": "en-US" }
+  "routes": [
+    { "name": "Home", "path": "/" },
+    { "name": "Projects", "path": "/projects" }
   ],
+  "languages": [{ "name": "English", "key": "en-US" }],
   "translations": [
     {
       "locale": "en-US",
@@ -10,7 +12,7 @@
         "I_am": "I'm a Software Engineer. I specialize in UI development",
         "what_i_offer": "What I offer",
         "usability": "Usable web applications",
-        "responsiveness": "Responsive web applications",
+        "responsiveness": "Mobile responsive applications",
         "insightful": "Insightful solutions",
         "thoughtful": "Thoughtful design",
         "accessibility": "User accessibility",

@@ -1,21 +1,18 @@
-import React, { FC } from "react"
+import React, { FC, ReactNode } from "react"
 import { useSelect } from "downshift"
-import { FaGlobe } from "react-icons/fa"
 import { IconButton } from "../../atoms"
+import { ItemType, Side } from "../types";
 import { menuVariants } from "./variants"
 import { DropDownWrapper, DropDownItems } from "./styles"
-
-export type ItemType = {
-  label: string
-  value: unknown
-}
 
 export interface DropDownProps {
   items: Array<ItemType>
   handleSelectedItem?: (item?: ItemType | null) => void
+  icon: ReactNode
+  side?: Side
 }
 
-export const DropDown: FC<DropDownProps> = ({ items, handleSelectedItem }) => {
+export const DropDown: FC<DropDownProps> = ({ items, handleSelectedItem, icon, side = Side.RIGHT }) => {
   const {
     isOpen,
     getToggleButtonProps,
@@ -31,13 +28,14 @@ export const DropDown: FC<DropDownProps> = ({ items, handleSelectedItem }) => {
   return (
     <DropDownWrapper>
       <IconButton {...getToggleButtonProps()}>
-        <FaGlobe />
+        {icon}
       </IconButton>
       <DropDownItems
         {...getMenuProps()}
         variants={menuVariants}
         animate={isOpen ? "open" : "close"}
         highlighted={highlightedIndex + 1}
+        side={side}
       >
         {items.map((item, index: number) => (
           <li {...getItemProps({ item, index })} key={index}>
