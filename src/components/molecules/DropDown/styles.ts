@@ -13,6 +13,7 @@ export const DropDownItems = styled(motion.ul)`
 ${({ theme, highlighted, side }: { theme: ThemeType, highlighted: number, side: Side }) => css`
 position: absolute;
 top:100%;
+border-top: 0.5rem solid ${theme.colors.dark};
 ${side === Side.LEFT ? "left:0" : "right:0"};
 z-index:-1;
 list-style-type:none;
