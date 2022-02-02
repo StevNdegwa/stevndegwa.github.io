@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[845],{9441:function(e,t,n){"use strict";n.r(t),n.d(t,{default:function(){return l}});var r=n(7294),u=n(1619);function l(){return r.createElement(u.Xg,null,r.createElement(u.mr,null,r.createElement(u.S$,null,"My work")))}}}]);
+//# sourceMappingURL=component---src-pages-projects-index-tsx-38f1d6398c27ff72d123.js.map

@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[649],{8959:function(e,t,r){"use strict";r.r(t),r.d(t,{default:function(){return a}});var u=r(7294),n=r(172);function a(){return u.createElement(n.Xg,null,u.createElement(n.mr,null,"To reach out"))}}}]);
+//# sourceMappingURL=component---src-pages-contacts-index-tsx-6167d7e48b832edd97a3.js.map

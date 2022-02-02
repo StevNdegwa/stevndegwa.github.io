@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[649],{8959:function(e,t,n){"use strict";n.r(t),n.d(t,{default:function(){return r}});var a=n(7294),u=n(9197);function r(){var e=(0,a.useCallback)((function(){}),[]);return a.createElement(u.Xg,{skipToContent:e},a.createElement(u.mr,null,"To reach out"),a.createElement(u.S$,null,"Email: sndegwa.n@outlook.com"))}}}]);
+//# sourceMappingURL=component---src-pages-contacts-index-tsx-0123a2df91f061d29640.js.map
