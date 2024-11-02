@@ -1,21 +1,25 @@
+/*
+ * Copyright (c) 2024 By github.com/StevNdegwa
+ */
+
 import * as React from "react"
-import icon from "../images/icon.png"
+import icon from "../../images/icon.png"
 import type { HeadFC, PageProps } from "gatsby"
-import { Header, PageLayout } from "../components"
-import { GlobalStyle } from "../components/GlobalStyle"
+import { PageLayout } from "../../components"
 
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <PageLayout>
-      PAGE NOT FOUND
+      Contacts
     </PageLayout>
+
   )
 }
 
 export default IndexPage
 
 export const Head: HeadFC = () => <>
-  <title>404</title>
+  <title>Contacts</title>
   <link rel="icon" href={icon} />
 </>

@@ -1,11 +1,15 @@
 import * as React from "react"
 import icon from "../images/icon.png"
 import type { HeadFC, PageProps } from "gatsby"
+import { Header, PageLayout } from "../components"
+import { GlobalStyle } from "../components/GlobalStyle"
 
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <div>Homepage</div>
+    <PageLayout>
+      Homepage
+    </PageLayout>
   )
 }
 
