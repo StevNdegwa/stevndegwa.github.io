@@ -2,16 +2,17 @@
  * Copyright (c) 2024 By github.com/StevNdegwa
  */
 
-import { createGlobalStyle } from 'styled-components'
-import { lighten } from "polished"
+import { createGlobalStyle } from "styled-components";
+import { lighten } from "polished";
 
-export const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean; }>`
+export const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean }>`
     @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
     
     :root {
         --text-color: #003363;
         --bg-color: #ffffff;
         --border-color: ${lighten(0.8, "#012444")};
+        --primary-color: #00FF38;
     }
     
     body {
@@ -24,4 +25,4 @@ export const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean; }>`
         font-weight: 400;
         font-style: normal;
     }
-`
+`;

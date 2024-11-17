@@ -43,9 +43,3 @@ export const NavContainer = styled.nav`
         gap: 40px;
     }
 `
-export const NavItem = styled.a`
-    font-size: 24px;
-    text-decoration: none;
-    cursor: pointer;
-    color: inherit;
-`
