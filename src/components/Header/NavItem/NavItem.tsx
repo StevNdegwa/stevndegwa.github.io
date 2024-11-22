@@ -1,4 +1,4 @@
-import React, { FC, HTMLProps, PropsWithChildren, useMemo } from "react";
+import React, { FC, PropsWithChildren, useMemo } from "react";
 import { Wrapper, ActiveLinkIndicator } from "./styles";
 
 export const NavItem: FC<PropsWithChildren<{ href: string }>> = ({
@@ -13,7 +13,14 @@ export const NavItem: FC<PropsWithChildren<{ href: string }>> = ({
   return (
     <Wrapper to={href}>
       {children}
-      <ActiveLinkIndicator isActiveLink={isActiveLnk} />
+      <ActiveLinkIndicator
+        transition={{ type: "spring", duration: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: isActiveLnk ? 1 : 0,
+        }}
+        isActiveLink={isActiveLnk}
+      />
     </Wrapper>
   );
 };
