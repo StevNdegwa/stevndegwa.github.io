@@ -11,6 +11,6 @@ export const Wrapper = styled.div`
     background-color: white;
 `;
 
-export  const Main = styled.main`
-    max-width: 800px;
+export const Main = styled.main`
+    max-width: 100%;
 `
