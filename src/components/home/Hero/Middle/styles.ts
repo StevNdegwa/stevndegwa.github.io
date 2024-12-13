@@ -117,10 +117,10 @@ export const AboutCardBg = styled.div`
   padding-top: 40px;
   position: relative;
   & > p {
-  font-size: 36px;
-  color: #012444;
-  width: 400px;
-  font-weight: 600;
+    font-size: 36px;
+    color: #012444;
+    width: 400px;
+    font-family: var(--font-semibold);
   }
   & > svg{
     position: absolute;
