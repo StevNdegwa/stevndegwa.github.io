@@ -5,10 +5,8 @@ export const NavItem: FC<PropsWithChildren<{ href: string }>> = ({
   href,
   children,
 }) => {
-  const isActiveLnk = useMemo(
-    () => typeof window !== "undefined" && window.location.pathname === href,
-    [href]
-  );
+  const isActiveLnk =
+    typeof window !== "undefined" && window.location.pathname === href;
 
   return (
     <Wrapper to={href}>
