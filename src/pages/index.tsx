@@ -1,14 +1,14 @@
 import * as React from "react";
 import icon from "../images/icon.png";
 import type { HeadFC, PageProps } from "gatsby";
-import { PageLayout } from "../components";
-import { Hero } from "../components/home";
+import { Hero, WhatIdo } from "../components/home";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <PageLayout>
+    <>
       <Hero />
-    </PageLayout>
+      <WhatIdo />
+    </>
   );
 };
 

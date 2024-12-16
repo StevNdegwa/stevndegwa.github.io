@@ -47,6 +47,7 @@ export const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean }>`
         --text-color: #003363;
         --bg-color: #ffffff;
         --border-color: ${lighten(0.8, "#012444")};
+        --footer-bg: ${lighten(0.85, "#012444")};
         --primary-color: #00FF38;
         --font-black: Urbanist_Black;
         --font-semibold: Urbanist_SemiBold;
@@ -65,5 +66,8 @@ export const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean }>`
         margin: 0;
         background-color: var(--bg-color);
         font-family: var(--font-regular);
+        font-size: 16px;
+        font-style: normal;
+        background-color: var(--bg-color);
     }
 `;

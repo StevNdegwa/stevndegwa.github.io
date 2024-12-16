@@ -6,7 +6,7 @@ import styled from "styled-components"
 
 export const Wrapper = styled.div`
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: 100%;
     border: none;
     background-color: white;
 `;
