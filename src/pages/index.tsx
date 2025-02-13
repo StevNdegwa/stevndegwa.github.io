@@ -1,13 +1,23 @@
 import * as React from "react";
 import icon from "../images/icon.png";
-import type { HeadFC, PageProps } from "gatsby";
-import { Hero, WhatIdo } from "../components/home";
+import { graphql, useStaticQuery, type HeadFC, type PageProps } from "gatsby";
+import { Hero, WhatIdo, WhatIWorkedWith } from "../components/home";
 
 const IndexPage: React.FC<PageProps> = () => {
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      dataJson {
+        whatIDo
+        whatIWorkWith
+      }
+    }
+  `);
+
   return (
     <>
       <Hero />
-      <WhatIdo />
+      <WhatIdo list={data?.dataJson?.whatIDo || []} />
+      <WhatIWorkedWith list={data?.dataJson?.whatIWorkWith || []} />
     </>
   );
 };

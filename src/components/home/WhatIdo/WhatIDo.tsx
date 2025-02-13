@@ -1,29 +1,13 @@
-import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import { Title } from "./Title";
+import React, { FC } from "react";
 import { Item } from "./Item";
-import { ItemsContainer, Wrapper } from "./styles";
+import { ItemsContainer, Wrapper, Title } from "./styles";
 
-export const WhatIdo = () => {
-  const data = useStaticQuery(graphql`
-    query MyQuery {
-      allDataJson {
-        nodes {
-          list
-        }
-      }
-    }
-  `);
-
-  if (!data?.allDataJson?.nodes?.[0]?.list) {
-    return null;
-  }
-
+export const WhatIdo: FC<{ list: string[] }> = ({ list }) => {
   return (
     <Wrapper>
-      <Title />
+      <Title>WHAT I DO</Title>
       <ItemsContainer>
-        {data.allDataJson.nodes[0].list.map((item: string, index: number) => (
+        {list.map((item: string, index: number) => (
           <Item key={index} label={item} />
         ))}
       </ItemsContainer>
