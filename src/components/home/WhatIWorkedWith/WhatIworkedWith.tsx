@@ -1,20 +1,17 @@
 import React, { FC } from "react";
-import { List, StyledContent, Title, Wrapper } from "./styles";
+import { List, Wrapper } from "./styles";
+import { Section } from "../Section";
 
 export const WhatIWorkedWith: FC<{ list: string[] }> = ({ list }) => {
   return (
-    <Wrapper>
-      <Title>
-        <span className="top">TOOLS AND TECHNOLOGIES</span>{" "}
-        <span className="bottom">I HAVE WORKED WITH</span>
-      </Title>
-      <StyledContent>
+    <Section title="WHAT I HAVE WORKED WITH">
+      <Wrapper>
         <List>
           {list.map((item: string, index: number) => (
             <li key={index}>{item}</li>
           ))}
         </List>
-      </StyledContent>
-    </Wrapper>
+      </Wrapper>
+    </Section>
   );
 };

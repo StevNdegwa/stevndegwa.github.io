@@ -16,8 +16,9 @@ export const Intro = styled.div`
 height: 420px;
 background-image: url('${wall}');
 background-size: auto 100%;
+display: flex;
+justify-content: space-between;
 `;
-
 
 export const AboutCard = styled.div`
   width: 578px;
@@ -113,14 +114,13 @@ export const AboutCardBg = styled.div`
   z-index: 200;
   width: 590px;
   height: 237px;
-  padding-left: 70px;
+  padding-left: 60px;
   padding-top: 40px;
   position: relative;
   & > p {
-    font-size: 36px;
+    font-size: 30px;
     color: #012444;
-    width: 400px;
-    font-family: var(--font-semibold);
+    width: 380px;
   }
   & > svg{
     position: absolute;

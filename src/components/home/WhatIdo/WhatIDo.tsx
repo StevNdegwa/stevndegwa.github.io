@@ -1,16 +1,16 @@
 import React, { FC } from "react";
 import { Item } from "./Item";
-import { ItemsContainer, Wrapper, Title } from "./styles";
+import { Wrapper } from "./styles";
+import { Section } from "../Section";
 
 export const WhatIdo: FC<{ list: string[] }> = ({ list }) => {
   return (
-    <Wrapper>
-      <Title>WHAT I DO</Title>
-      <ItemsContainer>
+    <Section title="What I do">
+      <Wrapper>
         {list.map((item: string, index: number) => (
           <Item key={index} label={item} />
         ))}
-      </ItemsContainer>
-    </Wrapper>
+      </Wrapper>
+    </Section>
   );
 };
