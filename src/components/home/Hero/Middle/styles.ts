@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 120px;
+  margin-bottom: 50px;
 `;
 
 export const Stephen = styled.img`

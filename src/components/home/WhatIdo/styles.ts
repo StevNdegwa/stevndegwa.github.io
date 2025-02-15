@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Content } from "../../Content";
 
 export const Wrapper = styled.div`
   display: flex;

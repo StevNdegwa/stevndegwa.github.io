@@ -4,7 +4,7 @@ import { Content } from "../../Content";
 export const Wrapper = styled(Content)`
 width: 100%;
 display: flex;
-margin: 100px auto;
+margin-top: 50px;
 `
 
 export const Title = styled.div`

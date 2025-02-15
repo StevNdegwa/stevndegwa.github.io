@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Item } from "./Item";
+import { Item } from "../Item";
 import { Wrapper } from "./styles";
 import { Section } from "../Section";
 

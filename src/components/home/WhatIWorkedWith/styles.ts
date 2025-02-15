@@ -7,15 +7,11 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
-export const List = styled.ul`
-  list-style-type: none;
+export const List = styled.div`
   padding: 0;
   line-height: 30px;
   font-size: 16px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 0px;
-  & > li:not(:last-child)::after {
-    content: "\\00a0\\00a0\\00a0/\\00a0\\00a0\\00a0";
-  }
+  gap: 16px 8px;
 `;

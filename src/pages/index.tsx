@@ -1,7 +1,13 @@
 import * as React from "react";
 import icon from "../images/icon.png";
 import { graphql, useStaticQuery, type HeadFC, type PageProps } from "gatsby";
-import { Hero, WhatIdo, WhatIWorkedWith } from "../components/home";
+import {
+  Hero,
+  WhatIdo,
+  WhatIWorkedWith,
+  WorkExperience,
+  JobDataType,
+} from "../components/home";
 
 const IndexPage: React.FC<PageProps> = () => {
   const data = useStaticQuery(graphql`
@@ -9,6 +15,13 @@ const IndexPage: React.FC<PageProps> = () => {
       dataJson {
         whatIDo
         whatIWorkWith
+        jobs {
+          start
+          end
+          company
+          position
+          description
+        }
       }
     }
   `);
@@ -18,6 +31,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Hero />
       <WhatIdo list={data?.dataJson?.whatIDo || []} />
       <WhatIWorkedWith list={data?.dataJson?.whatIWorkWith || []} />
+      <WorkExperience list={(data?.dataJson?.jobs || []) as JobDataType[]} />
     </>
   );
 };

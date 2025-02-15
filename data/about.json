@@ -59,5 +59,35 @@
     "Strapi",
     "RxJS",
     "Figma"
+  ],
+  "jobs":[
+    {
+      "start": "MARCH 2022",
+      "end": "JANUARY 2025",
+      "company": "Payoneer, Germany",
+      "position": "Frontend Engineer",
+      "description": "Payoneer is a leader in global online money transfer and digital payment services. I worked with the front-end engineering team developing checkout software and libraries that enabled businesses to receive payments online on their e-commerce sites. My work mainly involved coding, integration, unit/functional testing, QA, Deployment, Monitoring, and Incident management among others"
+    },
+    {
+      "start": "NOV 2020",
+      "end": "JANUARY 2022",
+      "company": "Savannah Informatics Ltd, Nairobi",
+      "position": "Software Engineer",
+      "description": "Savannah Informatics is the leading health informatics company in Kenya. They facilitate patient data movement between hospitals and insurers during a hospital visit. I worked as a front-end engineer developing web applications to be used by insurance companies and hospital staff. The main Front-end web frameworks that we use are AngularJS and React. We also do a lot of unit testing to ensure the stability of the systems since our work serves a lot of people."
+    },
+    {
+      "start": "JULY 2020",
+      "end": "OCT 2020",
+      "company": "Mobilit Africa, Nairobi",
+      "position": "Software Engineer Intern",
+      "description": "Mobilit Africa is a software company in Nairobi that specializes in web and mobile app development. I was part of the front-end development team. Most of my activities involved UI design and prototyping, features development using React, and the creation of unit tests"
+    },
+    {
+      "start": "DEC 2018",
+      "end": "FEB 2020",
+      "company": "Timecon Kenya Ltd, Nairobi",
+      "position": "Software Consultant",
+      "description": "TKL is a business management software provider. I worked as a developer and a software consultant. I helped develop some of the features of a payroll application and offered consultation services on other business software applications. I mainly worked with angular js, javascript, HTML, and CSS."
+    }
   ]
 }

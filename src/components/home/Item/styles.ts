@@ -16,6 +16,6 @@ export const Icon = styled.div`
 background-color: var(--text-color);
 opacity: 0.5;
 border-radius: 50%;
-width: 16px;
-height: 16px;
+width: 10px;
+height: 10px;
 `
