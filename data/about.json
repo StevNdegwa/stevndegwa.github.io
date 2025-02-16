@@ -89,5 +89,47 @@
       "position": "Software Consultant",
       "description": "TKL is a business management software provider. I worked as a developer and a software consultant. I helped develop some of the features of a payroll application and offered consultation services on other business software applications. I mainly worked with angular js, javascript, HTML, and CSS."
     }
+  ],
+  "badges": [
+    {
+      "title": "Problem Solving",
+      "by": "Codility",
+      "iconId": "codility_sgupbx",
+      "from": "29/05/2021",
+      "link": "https://app.codility.com/cert/view/certMQAZQA-FCSSQ2UBQD68YS58/",
+      "homepage": "https://www.codility.com/"
+    },
+    {
+      "title": "Problem Solving",
+      "by": "Codility",
+      "iconId": "codility_sgupbx",
+      "from": "24/04/2021",
+      "link": "https://app.codility.com/cert/view/certQAEVEQ-BCJABU237EUY44V5/",
+      "homepage": "https://www.codility.com/"
+    },
+    {
+      "title": "Propblem Solving",
+      "by": "Hackerank",
+      "iconId": "hackerrank_myakqn",
+      "from": "12/07/2020",
+      "link": "https://www.hackerrank.com/certificates/4179bb563123",
+      "homepage": "https://www.hackerrank.com/"
+    },
+    {
+      "title": "Javascript(Basic)",
+      "by": "Hackerank",
+      "iconId": "hackerrank_myakqn",
+      "from": "12/07/2020",
+      "link": "https://www.hackerrank.com/certificates/3cb2a879b9e5",
+      "homepage": "https://www.hackerrank.com/"
+    },
+    {
+      "title": "Azure Fundamentals",
+      "by": "Microsoft",
+      "iconId": "ms_behsv6",
+      "from": "16/07/2020",
+      "link": "https://www.youracclaim.com/badges/aad1bae5-1778-4cc0-ac3e-f90f5d400798?source=linked_in_profile",
+      "homepage": "https://www.microsoft.com/"
+    }
   ]
 }

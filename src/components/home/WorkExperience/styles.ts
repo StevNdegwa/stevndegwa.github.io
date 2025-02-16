@@ -12,11 +12,10 @@ margin-top: 100px;
 export const JobsContainer = styled.div`
 margin-left: 20px;
 `
-export const JobBadge = styled.div`
+export const JobBadge = styled(motion.div)`
 width:30px;
 height: 30px;
 border-radius: 10px;
-background-color: var(--primary-color);
 position: absolute;
 left: -15px;
 top:0px;

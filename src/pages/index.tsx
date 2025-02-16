@@ -7,6 +7,8 @@ import {
   WhatIWorkedWith,
   WorkExperience,
   JobDataType,
+  BadgesAndCertifications,
+  BadgeType,
 } from "../components/home";
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -22,6 +24,14 @@ const IndexPage: React.FC<PageProps> = () => {
           position
           description
         }
+        badges {
+          title
+          by
+          iconId
+          from
+          link
+          homepage
+        }
       }
     }
   `);
@@ -32,6 +42,9 @@ const IndexPage: React.FC<PageProps> = () => {
       <WhatIdo list={data?.dataJson?.whatIDo || []} />
       <WhatIWorkedWith list={data?.dataJson?.whatIWorkWith || []} />
       <WorkExperience list={(data?.dataJson?.jobs || []) as JobDataType[]} />
+      <BadgesAndCertifications
+        list={(data?.dataJson?.badges || []) as BadgeType[]}
+      />
     </>
   );
 };

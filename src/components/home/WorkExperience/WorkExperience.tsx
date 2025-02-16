@@ -31,11 +31,15 @@ export const WorkExperience: FC<{
           <JobWrapper key={index}>
             <Border
               initial={{ height: "0px" }}
-              whileInView={{ height: "100%" }}
-              transition={{ delay: index * 0.3, duration: 0.3 }}
+              animate={{ height: "100%" }}
+              transition={{ delay: index * 0.3, duration: 0.3, repeat: 0 }}
             />
             <JobTitleWrapper>
-              <JobBadge />
+              <JobBadge
+                initial={{ backgroundColor: "rgba(0, 51, 99, 10%)" }}
+                animate={{ backgroundColor: "var(--primary-color)" }}
+                transition={{ delay: index * 0.3, duration: 0.3, repeat: 0 }}
+              />
               <div>
                 <JobTimeline>
                   <MdAccessTime size={14} />
