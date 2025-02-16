@@ -95,4 +95,20 @@ export const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean }>`
         color: var(--dark-color);
         font-family: var(--font-family);
     }
+
+    .primary-color-text{
+        color: var(--primary-color);
+    }
+    
+    .secondary-color-text{
+        color: var(--secondary-color);
+    }
+
+    .grey-color-text{
+        color: var(--grey-color);
+    }
+
+    .dark-color-text{
+        color: var(--dark-color);
+    }
 `;
