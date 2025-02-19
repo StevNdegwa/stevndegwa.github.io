@@ -29,7 +29,7 @@ export const WorkExperience: FC<{
         <Border
           initial={{ height: "0px" }}
           whileInView={{ height: "100%" }}
-          transition={{ delay: 0.5, duration: list.length * 0.5, repeat: 0 }}
+          transition={{ delay: 0.5, duration: list.length * 0.5 }}
         />
         {list.map((job, index) => (
           <JobWrapper key={index}>
@@ -54,7 +54,6 @@ export const WorkExperience: FC<{
                 </Text>
               </FlexBox>
             </JobTitleWrapper>
-
             <JobDescription element="p">{job.description}</JobDescription>
           </JobWrapper>
         ))}

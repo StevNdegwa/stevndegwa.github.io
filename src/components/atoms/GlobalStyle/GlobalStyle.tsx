@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean }>`
 
     :root {
         --dark-color:rgb(1, 36, 68);
+        --light-color:rgb(255, 255, 255);
         --bg-color:rgb(255, 255, 255);
         --primary-color:rgb(0, 255, 56);
         --secondary-color:rgb(248, 222, 57);
@@ -24,9 +25,17 @@ export const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean }>`
         --dark-color-transparent-9: rgba(1, 36, 68, 0.9);
         --dark-color-transparent-7: rgba(1, 36, 68, 0.7);
         --dark-color-transparent-5: rgba(1, 36, 68, 0.5);
+        --dark-color-transparent-4: rgba(1, 36, 68, 0.4);
         --dark-color-transparent-3: rgba(1, 36, 68, 0.3);
         --dark-color-transparent-1: rgba(1, 36, 68, 0.1);
         --dark-color-transparent-05: rgba(1, 36, 68, 0.05);
+
+        --light-color-transparent-9: rgba(255, 255, 255, 0.9);
+        --light-color-transparent-7: rgba(255, 255, 255, 0.7);
+        --light-color-transparent-5: rgba(255, 255, 255, 0.5);
+        --light-color-transparent-3: rgba(255, 255, 255, 0.3);
+        --light-color-transparent-1: rgba(255, 255, 255, 0.1);
+        --light-color-transparent-05: rgba(255, 255, 255, 0.05);
 
         --primary-color-transparent-9: rgba(0, 255, 56, 0.9);
         --primary-color-transparent-7: rgba(0, 255, 56, 0.7);
@@ -39,12 +48,14 @@ export const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean }>`
         --secondary-color-transparent-5: rgba(248, 222, 57, 0.5);
         --secondary-color-transparent-3: rgba(248, 222, 57, 0.3);
         --secondary-color-transparent-1: rgba(248, 222, 57, 0.1);
+        --secondary-color-transparent-05: rgba(248, 222, 57, 0.05);
 
         --grey-color-transparent-9: rgba(156, 156, 156, 0.9);
         --grey-color-transparent-7: rgba(156, 156, 156, 0.7);
         --grey-color-transparent-5: rgba(156, 156, 156, 0.5);
         --grey-color-transparent-3: rgba(156, 156, 156, 0.3);
         --grey-color-transparent-1: rgba(156, 156, 156, 0.1);
+        --grey-color-transparent-05: rgba(156, 156, 156, 0.05);
 
         // borders
         --border-xs: 1px solid var(--dark-color-transparent-1);
@@ -243,5 +254,25 @@ export const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean }>`
 
     .border-xl {
         border: var(--border-xl);
+    }
+
+    .shadow-xs {
+        box-shadow: var(--shadow-xs);
+    }
+
+    .shadow-sm {
+        box-shadow: var(--shadow-sm);
+    }   
+
+    .shadow-md {
+        box-shadow: var(--shadow-md);
+    }
+
+    .shadow-lg {
+        box-shadow: var(--shadow-lg);
+    }
+
+    .shadow-xl {
+        box-shadow: var(--shadow-xl);
     }
 `;

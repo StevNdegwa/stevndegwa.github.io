@@ -1,11 +1,10 @@
 import React, { FC } from "react";
 import { FaCalendarAlt } from "react-icons/fa";
-import {
-  BadgesCertificationsWrapper,
-  BadgesCertificationsItems,
-  Item,
-} from "./styles";
-import { ContentWrapper } from "@components/molecules";
+import icon from "@assets/images/codility.jpg";
+import { Card, FlexBox } from "@components/molecules";
+import { Text } from "@components/atoms";
+import { Section } from "../Section";
+import { BadgeIcon, BadgesCertificationsWrapper, BadgeTitle } from "./styles";
 
 export type BadgeType = {
   title: string;
@@ -21,43 +20,43 @@ export const BadgesAndCertifications: FC<{ list: BadgeType[] }> = ({
 }) => {
   return (
     <BadgesCertificationsWrapper>
-      <ContentWrapper>
-        <h1>Badges and Certifications</h1>
-        <BadgesCertificationsItems>
-          {list.map((badge: BadgeType, index: number) => (
-            <Item key={index}>
-              <section>
-                <div>
-                  <a href={badge.homepage} target="_blank">
-                    {/* <img
-                      src={badge.iconLink}
-                      alt={`${badge.title} by ${badge.from}`}
-                    /> */}
-                    <img />
-                  </a>
-                </div>
-                <div>
-                  <span>
-                    {badge.title} <br />
-                    <span>by</span> {badge.by}
-                  </span>
-                </div>
-              </section>
-              <section>
-                <div>
-                  <FaCalendarAlt />
-                </div>
-                <div>{badge.from} - ~</div>
-              </section>
-              <section>
-                <a href={badge.link} target="_blank">
+      <Section>
+        <FlexBox direction="column" gap="md">
+          <Text heading="h2" size="xxl" weight="medium">
+            Badges and Certifications 🥇
+          </Text>
+          <FlexBox gap="sm" justify="space-between" wrap>
+            {list.map((badge: BadgeType, index: number) => (
+              <Card key={index}>
+                <Card.Title>
+                  <FlexBox gap="sm" align="center">
+                    <BadgeIcon borderRadius="sm">
+                      <a href={badge.homepage} target="_blank">
+                        <img
+                          src={icon}
+                          alt={`${badge.title} by ${badge.from}`}
+                        />
+                      </a>
+                    </BadgeIcon>
+                    <BadgeTitle size="lg">
+                      {badge.title} by {badge.by}
+                    </BadgeTitle>
+                  </FlexBox>
+                </Card.Title>
+                <Card.Content>
+                  <FlexBox gap="sm" align="center">
+                    <FaCalendarAlt size={24} />
+                    <Text>{badge.from} - ~</Text>
+                  </FlexBox>
+                </Card.Content>
+                <Card.Action href={badge.link} target="_blank">
                   View credential
-                </a>
-              </section>
-            </Item>
-          ))}
-        </BadgesCertificationsItems>
-      </ContentWrapper>
+                </Card.Action>
+              </Card>
+            ))}
+          </FlexBox>
+        </FlexBox>
+      </Section>
     </BadgesCertificationsWrapper>
   );
 };

@@ -19,11 +19,13 @@ export const Box: React.FC<BoxProps> = ({
   element,
   borderRadius,
   border,
+  shadow,
   ...props
 }) => {
   const elementClasses = clsx(className, `${color}-color-text`, {
     [`${borderRadius}-rounded`]: !!borderRadius,
     [`border-${border}`]: !!border,
+    [`shadow-${shadow}`]: !!shadow,
   });
 
   return (
