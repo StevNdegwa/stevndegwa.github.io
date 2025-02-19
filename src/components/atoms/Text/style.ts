@@ -4,4 +4,8 @@ export const Wrapper = styled.span`
 color: var(--dark-color);
 font-size: var(--text-size-md);
 font-family: var(--font-family);
+&.outline-text-variant{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px;
+}
 `;

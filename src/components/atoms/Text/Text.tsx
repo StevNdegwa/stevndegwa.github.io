@@ -5,26 +5,42 @@ import { Wrapper } from "./style";
 
 export type TextProps = PropsWithChildren<
   React.HTMLAttributes<HTMLSpanElement> & AtomElementProps
-> & {
-  variant: "solid" | "outline";
-  weight: "light" | "regular" | "medium" | "bold";
-};
+> &
+  Partial<{
+    variant: "solid" | "outline";
+    weight: "light" | "regular" | "medium" | "bold";
+    textShadow: "xs" | "sm" | "md" | "lg" | "xl";
+    size: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
+    heading: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  }>;
 
 export const Text: React.FC<TextProps> = ({
-  color,
+  color = "dark",
   children,
   className,
+  element,
+  size = "md",
+  weight = "regular",
+  heading,
+  variant,
   ...props
 }) => {
-  const elementClasses = clsx(className, {
-    "dark-color-text": color === "dark",
-    "primary-color-text": color === "primary",
-    "secondary-color-text": color === "secondary",
-    "grey-color-text": color === "grey",
-  });
+  const elementClasses = clsx(
+    className,
+    `${color}-color-text`,
+    `${size}-text-size`,
+    `${weight}-text-weight`,
+    {
+      [`${variant}-text-variant`]: !!variant,
+    }
+  );
 
   return (
-    <Wrapper {...props} className={elementClasses}>
+    <Wrapper
+      as={heading || element || "span"}
+      {...props}
+      className={elementClasses}
+    >
       {children}
     </Wrapper>
   );
