@@ -10,6 +10,7 @@ export type TextProps = PropsWithChildren<
     variant: "solid" | "outline";
     weight: "light" | "regular" | "medium" | "bold";
     textShadow: "xs" | "sm" | "md" | "lg" | "xl";
+    textAlign: "left" | "center" | "right";
     size: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
     heading: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   }>;
@@ -23,6 +24,8 @@ export const Text: React.FC<TextProps> = ({
   weight = "regular",
   heading,
   variant,
+  textAlign,
+  textShadow,
   ...props
 }) => {
   const elementClasses = clsx(
@@ -32,6 +35,8 @@ export const Text: React.FC<TextProps> = ({
     `${weight}-text-weight`,
     {
       [`${variant}-text-variant`]: !!variant,
+      [`text-shadow-${textShadow}`]: !!textShadow,
+      [`text-align-${textAlign}`]: !!textAlign,
     }
   );
 

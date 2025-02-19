@@ -26,18 +26,21 @@ export const WorkExperience: FC<{
   return (
     <Section title="Work Experience">
       <JobsContainer>
+        <Border
+          initial={{ height: "0px" }}
+          whileInView={{ height: "100%" }}
+          transition={{ delay: 0.5, duration: list.length * 0.5, repeat: 0 }}
+        />
         {list.map((job, index) => (
           <JobWrapper key={index}>
-            <Border
-              initial={{ height: "0px" }}
-              animate={{ height: "100%" }}
-              transition={{ delay: index * 0.3, duration: 0.3, repeat: 0 }}
-            />
             <JobTitleWrapper>
               <JobBadge
-                initial={{ backgroundColor: "rgba(0, 51, 99, 10%)" }}
-                animate={{ backgroundColor: "var(--primary-color)" }}
-                transition={{ delay: index * 0.3, duration: 0.3, repeat: 0 }}
+                initial={{ backgroundColor: "var(--grey-color-transparent-3)" }}
+                whileInView={{ backgroundColor: "var(--secondary-color)" }}
+                transition={{
+                  delay: 0.5 + index * 0.5,
+                  duration: 0.2,
+                }}
               />
               <FlexBox direction="column">
                 <FlexBox gap="xs">

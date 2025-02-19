@@ -6,6 +6,9 @@ display: flex;
 &.flex-column{
   flex-direction: column;
 }
+&.flex-row{
+    flex-direction: row;
+}   
 &.flex-wrap{
     flex-wrap: wrap;
 }
@@ -18,11 +21,10 @@ display: flex;
 &.justify-space-around{
     justify-content: space-around;
 }
-&.justify-flex-start{
-
+&.justify-start{
     justify-content: flex-start;
 }
-&.justify-flex-end{
+&.justify-end{
     justify-content: flex-end;
 }
 &.align-center{

@@ -5,6 +5,7 @@ import { Text } from "@components/atoms";
 
 export const JobsContainer = styled.div`
 margin-left: 20px;
+position: relative;
 `
 export const JobBadge = styled(motion.div)`
 width:30px;
@@ -32,10 +33,10 @@ flex-direction: column;
 gap: 10px;
 padding-bottom: 40px;
 position: relative;
-background-color: transparent;
-&:last-child > ${Border} {
-  display: none;
-  }
+z-index: 2;
+&:last-of-type{
+background-color: white;
+}
 `;
 
 export const JobTitleWrapper = styled.div`

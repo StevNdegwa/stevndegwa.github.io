@@ -7,12 +7,7 @@ export type FlexBoxProps = BoxProps &
   Partial<{
     direction: "row" | "column";
     wrap: boolean;
-    justify:
-      | "center"
-      | "space-between"
-      | "space-around"
-      | "flex-start"
-      | "flex-end";
+    justify: "center" | "space-between" | "space-around" | "start" | "end";
     align: "center" | "flex-start" | "flex-end";
     gap: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
   }>;

@@ -35,6 +35,8 @@
     "Styled Components",
     "Material UI",
     "JSS",
+    "Redux",
+    "Redux Toolkit",
     "NodeJS",
     "Express",
     "Jest",
@@ -72,7 +74,9 @@
     "Strapi",
     "RxJS",
     "Figma",
-    "Digital Ocean"
+    "Digital Ocean",
+    "REST",
+    "GraphQL"
   ],
   "jobs":[
     {
