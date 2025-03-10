@@ -1,7 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { Box, Text } from "@components/atoms";
 import { Wrapper } from "./styles";
-import { FlexBox } from "@components/molecules";
 
 export const Section: React.FC<PropsWithChildren<{ title?: string }>> = ({
   children,

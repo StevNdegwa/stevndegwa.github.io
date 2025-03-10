@@ -3,8 +3,9 @@
  */
 
 import styled from "styled-components"
+import { FlexBox } from '../../molecules/FlexBox/FlexBox';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(FlexBox)`
     min-height: 100vh;
     min-width: 100%;
     border: none;

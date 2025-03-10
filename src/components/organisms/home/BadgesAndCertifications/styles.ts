@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Box, Text } from "@components/atoms";
+import { motion } from "motion/react";
 
 export const BadgesCertificationsWrapper = styled(Box)`
 background-color:var(--primary-color-transparent-1);
@@ -19,8 +20,11 @@ overflow:hidden;
 }
 `;
 
-export const BadgesCertificationsItems = styled.ul`
-  list-style-type:none;
-  display:flex;
-  flex-wrap:wrap;
-`;
+
+export const IconContainer = styled(motion.div)`
+width: 30px;
+height: 30px;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+`

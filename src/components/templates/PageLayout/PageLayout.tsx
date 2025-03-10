@@ -21,7 +21,7 @@ export const PageLayout: React.FC<React.PropsWithChildren<{}>> = ({
   return (
     <>
       <GlobalStyle />
-      <Wrapper>
+      <Wrapper direction="column" justify="space-between">
         <Header />
         <Main>{children}</Main>
         <Footer />

@@ -6,4 +6,5 @@ width: 100%;
 background-color: var(--footer-bg);
 border: none;
 padding-top: 20px;
+border-bottom: 20px solid var(--dark-color);
 `;

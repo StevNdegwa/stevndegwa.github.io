@@ -30,7 +30,11 @@ export const Middle = () => {
               </Text>
             </FlexBox>
           </AboutCardBg>
-          <AboutCardLink href="https://github.com/StevNdegwa" target="_blank">
+          <AboutCardLink
+            href="https://github.com/StevNdegwa"
+            target="_blank"
+            title="github.com/StevNdegwa"
+          >
             <GrGithub size={50} />
           </AboutCardLink>
         </AboutCard>

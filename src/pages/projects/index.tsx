@@ -5,9 +5,14 @@
 import * as React from "react";
 import icon from "@assets/images/icon.png";
 import type { HeadFC, PageProps } from "gatsby";
+import { ProjectsList } from "@components/organisms/projects";
 
 const IndexPage: React.FC<PageProps> = () => {
-  return <div>Projects</div>;
+  return (
+    <>
+      <ProjectsList />
+    </>
+  );
 };
 
 export default IndexPage;

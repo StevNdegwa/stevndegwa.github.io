@@ -3,3 +3,5 @@ export * from "./Box";
 export * from "./types";
 export * from "./GlobalStyle";
 export * from "./Button"
+export * from "./Shimmer";
+export * from "./Link";

@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <Wrapper>
       <ContentWrapper>
-        <p>Footer</p>
+        <p>Copyright @ {new Date().getFullYear()}</p>
       </ContentWrapper>
     </Wrapper>
   );
