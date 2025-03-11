@@ -8,6 +8,7 @@ import {
   BadgesAndCertifications,
   BadgeType,
   MySkills,
+  AboutMe,
 } from "@components/organisms/home";
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -38,6 +39,7 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
       <Hero />
+      <AboutMe />
       <MySkills
         whatIWorkedWith={data?.dataJson?.whatIWorkWith || []}
         whatIDo={data?.dataJson?.whatIDo || []}

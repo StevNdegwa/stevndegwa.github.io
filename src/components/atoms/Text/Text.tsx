@@ -13,6 +13,7 @@ export type TextProps = PropsWithChildren<
     textAlign: "left" | "center" | "right";
     size: "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
     heading: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    transform: "capitalize" | "uppercase" | "lowercase";
   }>;
 
 export const Text: React.FC<TextProps> = ({
@@ -26,6 +27,7 @@ export const Text: React.FC<TextProps> = ({
   variant,
   textAlign,
   textShadow,
+  transform,
   ...props
 }) => {
   const elementClasses = clsx(
@@ -37,6 +39,7 @@ export const Text: React.FC<TextProps> = ({
       [`${variant}-text-variant`]: !!variant,
       [`text-shadow-${textShadow}`]: !!textShadow,
       [`text-align-${textAlign}`]: !!textAlign,
+      [`text-transform-${transform}`]: !!transform,
     }
   );
 

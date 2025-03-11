@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { Section } from "../Section";
-import { FlexBox, List } from "@components/molecules";
-import { Link } from "@components/atoms";
+import { DataTagsList, FlexBox, List } from "@components/molecules";
+import { Box, Button, Link, Text } from "@components/atoms";
 
 export type ProjectType = {
   id: string;
@@ -10,6 +10,7 @@ export type ProjectType = {
   html_url: string;
   description: string;
   topics: string[];
+  homepage: string;
 };
 
 export const ProjectsList = () => {
@@ -38,15 +39,38 @@ export const ProjectsList = () => {
           <List.Item
             key={project.id}
             header={
-              <Link href={project.html_url} target="_blank">
+              <Link
+                href={project.html_url}
+                target="_blank"
+                title="View on GitHub"
+              >
                 <FlexBox direction="row" gap="sm">
-                  <span>GitHub/{project.full_name}</span>
+                  <Text weight="bold" transform="uppercase">
+                    GitHub/{project.full_name}
+                  </Text>
                   <FaExternalLinkAlt />
                 </FlexBox>
               </Link>
             }
           >
-            {project.description}
+            <FlexBox direction="column" gap="sm">
+              <Text element="p">{project.description}</Text>
+              <DataTagsList list={project.topics} />
+              <FlexBox>
+                <Box>
+                  {project.homepage && (
+                    <Button
+                      href={project.homepage}
+                      size="sm"
+                      color="dark"
+                      variant="outline"
+                    >
+                      View Live Application
+                    </Button>
+                  )}
+                </Box>
+              </FlexBox>
+            </FlexBox>
           </List.Item>
         ))}
       </List>

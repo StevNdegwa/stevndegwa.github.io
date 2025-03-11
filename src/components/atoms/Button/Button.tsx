@@ -17,6 +17,8 @@ export type ButtonProps = React.HTMLAttributes<
         | "dark"
         | "light-dark";
       href: string;
+      size: "sm" | "md" | "lg";
+      variant: "outline" | "fill" | "plain";
     }>
   >;
 
@@ -25,11 +27,15 @@ export const Button: FC<ButtonProps> = ({
   color,
   href,
   className,
+  size,
+  variant,
   ...props
 }) => {
   const element = useMemo(() => (href ? "a" : "button"), [href]);
   const elementClasses = clsx(className, {
     [`${color}-bg-color`]: !!color,
+    [`${size}-size`]: !!size,
+    [`${variant}-style`]: !!variant,
   });
 
   return (

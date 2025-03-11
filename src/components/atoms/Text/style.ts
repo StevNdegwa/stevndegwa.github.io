@@ -17,6 +17,14 @@ font-family: var(--font-family);
 &.text-align-right{
     text-align: right;
 }
-
+&.text-transform-capitalize{
+    text-transform: capitalize;
+}
+&.text-transform-uppercase{
+    text-transform: uppercase;
+}       
+&.text-transform-lowercase{
+    text-transform: lowercase;
+}
 
 `;

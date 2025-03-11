@@ -1,7 +1,8 @@
 import React from "react";
 import { Top } from "./Top";
 import { Middle } from "./Middle";
-import { ContentWrapper } from "@components/molecules";
+import { ContentWrapper, FlexBox } from "@components/molecules";
+import { Text } from "@components/atoms";
 
 export const Hero: React.FC = () => {
   return (
