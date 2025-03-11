@@ -9,7 +9,14 @@ export type ListItemProps = React.HTMLAttributes<HTMLLIElement> & {
 
 export const Item: FC<ListItemProps> = ({ header, children }) => {
   return (
-    <Wrapper>
+    <Wrapper
+      initial={{
+        marginTop: "10px",
+      }}
+      animate={{
+        marginTop: "0px",
+      }}
+    >
       <FlexBox direction="column" gap="sm">
         {header && (
           <Text heading="h5" size="lg" weight="bold">

@@ -1,6 +1,7 @@
+import { motion } from "motion/react"
 import styled from "styled-components";
 
-export const Wrapper = styled.li`
+export const Wrapper = styled(motion.li)`
     display: block;
     width: 100%;
     padding-bottom: 1rem;

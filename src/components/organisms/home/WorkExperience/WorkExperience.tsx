@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { MdAccessTime } from "react-icons/md";
-import { ContentWrapper, FlexBox } from "@components/molecules";
+import { FlexBox } from "@components/molecules";
 import {
   Border,
   JobBadge,
