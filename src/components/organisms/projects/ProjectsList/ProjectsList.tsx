@@ -64,6 +64,7 @@ export const ProjectsList = () => {
                       size="sm"
                       color="dark"
                       variant="outline"
+                      target="_blank"
                     >
                       View Live Application
                     </Button>

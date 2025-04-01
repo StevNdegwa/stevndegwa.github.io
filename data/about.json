@@ -48,6 +48,8 @@
     "Chai",
     "Selenium",
     "Playwright",
+    "fp-ts",
+    "Lit",
     "D3.JS",
     "JQuery",
     "Framer Motion",
@@ -76,7 +78,8 @@
     "Figma",
     "Digital Ocean",
     "REST",
-    "GraphQL"
+    "GraphQL",
+    "Github Copilot"
   ],
   "jobs":[
     {

@@ -9,7 +9,9 @@ import {
   BadgeType,
   MySkills,
   AboutMe,
+  Quote,
 } from "@components/organisms/home";
+import { Text } from "@components/atoms";
 
 const IndexPage: React.FC<PageProps> = () => {
   const data = useStaticQuery(graphql`
@@ -45,6 +47,7 @@ const IndexPage: React.FC<PageProps> = () => {
         whatIDo={data?.dataJson?.whatIDo || []}
       />
       <WorkExperience list={(data?.dataJson?.jobs || []) as JobDataType[]} />
+      <Quote />
       <BadgesAndCertifications
         list={(data?.dataJson?.badges || []) as BadgeType[]}
       />

@@ -11,7 +11,7 @@ export const AboutMe = () => {
           About Me
         </Text>
         <Text element="p" size="lg">
-          I’m a software Engineer with around 8 years of experience, including 5
+          I have around 9 years of software development experience, including 5
           years of professional work.
         </Text>
         <Text element="p" size="lg">
