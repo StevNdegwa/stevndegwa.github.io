@@ -20,7 +20,8 @@ export const ContactMe = forwardRef<HTMLFormElement>(({}, ref) => {
           y: 0,
         }}
         transition={{
-          type: "spring",
+          type: "tween",
+          stiffness: 100,
           duration: 0.5,
           bounce: 0.4,
         }}

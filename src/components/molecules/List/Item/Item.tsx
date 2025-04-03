@@ -11,10 +11,18 @@ export const Item: FC<ListItemProps> = ({ header, children }) => {
   return (
     <Wrapper
       initial={{
-        marginTop: "10px",
+        opacity: 0,
+        y: 20,
       }}
-      animate={{
-        marginTop: "0px",
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        type: "tween",
+        stiffness: 100,
+        duration: 0.5,
+        bounce: 0.4,
       }}
     >
       <FlexBox direction="column" gap="sm">
