@@ -2,6 +2,8 @@ export * from "./Text";
 export * from "./Box";
 export * from "./types";
 export * from "./GlobalStyle";
-export * from "./Button"
+export * from "./Button";
 export * from "./Shimmer";
 export * from "./Link";
+export * from "./Input";
+export * from "./TextArea";

@@ -2,7 +2,7 @@ import React, { FC, PropsWithChildren, useMemo } from "react";
 import clsx from "clsx";
 import { Wrapper } from "./styles";
 
-export type ButtonProps = React.HTMLAttributes<
+export type ButtonProps = React.ButtonHTMLAttributes<
   HTMLAnchorElement | HTMLButtonElement
 > &
   PropsWithChildren<
@@ -19,6 +19,7 @@ export type ButtonProps = React.HTMLAttributes<
       href: string;
       size: "sm" | "md" | "lg";
       variant: "outline" | "fill" | "plain";
+      type: string;
     }>
   >;
 
