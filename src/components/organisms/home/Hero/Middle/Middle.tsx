@@ -18,7 +18,12 @@ export const Middle = () => {
     <Wrapper direction="column" gap="xxl">
       <Stephen src={stephen} alt="stephen" />
       <Intro>
-        <AboutCard>
+        <AboutCard
+          animate={{ transform: "skew(0deg) scale(1)" }}
+          initial={{ transform: "skew(-10deg)  scale(1.05)" }}
+          whileHover={{ transform: "skew(-1deg)" }}
+          transition={{ type: "spring", stiffness: 100, duration: 0.5 }}
+        >
           <AboutCardShadow />
           <AboutCardBg>
             <FlexBox direction="column" gap="xs">
@@ -35,7 +40,7 @@ export const Middle = () => {
             target="_blank"
             title="github.com/StevNdegwa"
           >
-            <GrGithub size={50} />
+            <GrGithub />
           </AboutCardLink>
         </AboutCard>
       </Intro>

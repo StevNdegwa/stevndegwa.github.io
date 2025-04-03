@@ -20,7 +20,7 @@ export const NavItem: FC<{ href: string; label: string }> = ({
         animate={{
           opacity: isActiveLnk ? 1 : 0,
         }}
-        isActiveLink={isActiveLnk}
+        $isActiveLink={isActiveLnk}
       />
     </Wrapper>
   );

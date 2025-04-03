@@ -84,10 +84,10 @@ export const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean }>`
 
         // shadow
         --shadow-xs: 0 2px 4px 1px var(--grey-color-transparent-1);
-        --shadow-sm: 0 4px 6px 2px var(--grey-color-transparent-3);
-        --shadow-md: 0 6px 8px 8px var(--grey-color-transparent-3);
-        --shadow-lg: 0 8px 12px 16px var(--grey-color-transparent-3);
-        --shadow-xl: 0 12px 16px 32px var(--grey-color-transparent-3);
+        --shadow-sm: 0 4px 6px 2px var(--grey-color-transparent-1);
+        --shadow-md: 0 6px 8px 8px var(--grey-color-transparent-1);
+        --shadow-lg: 0 8px 12px 16px var(--grey-color-transparent-1);
+        --shadow-xl: 0 12px 16px 32px var(--grey-color-transparent-1);
 
         // text-shadow
         --text-shadow-xs: 0 2px 4px 1px var(--dark-color-transparent-1);

@@ -23,9 +23,11 @@ export const ProjectsList = () => {
       .then((response) => response.json())
       .then((data) =>
         setProjectsList(
-          data.filter((project: ProjectType) =>
-            project.topics.includes("portfolio")
-          )
+          data
+            .filter((project: ProjectType) =>
+              project.topics.includes("portfolio")
+            )
+            .sort((projectA: any, projectB: any) => projectB.id - projectA.id)
         )
       )
       .catch((error) => setError(error))

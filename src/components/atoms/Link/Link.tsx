@@ -1,7 +1,7 @@
 import React, { FC, forwardRef } from "react";
 import { Wrapper } from "./styles";
 
-export type LinksProps = React.HTMLAttributes<HTMLAnchorElement>;
+export type LinksProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export const Link = forwardRef<HTMLAnchorElement, LinksProps>(
   ({ children, ...props }, ref) => {

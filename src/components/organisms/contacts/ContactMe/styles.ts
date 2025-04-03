@@ -1,5 +1,6 @@
 import { Box } from "@components/atoms";
 import { FlexBox } from "@components/molecules";
+import { motion } from "motion/react";
 import styled, { keyframes } from "styled-components";
 
 export const Wrapper = styled(FlexBox)`
@@ -8,7 +9,7 @@ export const Wrapper = styled(FlexBox)`
   padding: 1rem;
   height: auto;
   border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--shadow-sm);
   border: 1px solid var(--dark-color-transparent-05);
 
   @media only screen and (max-width: 768px) {
@@ -16,19 +17,16 @@ export const Wrapper = styled(FlexBox)`
   }
 `;
 
-export const ContactInfo = styled(FlexBox)`
+export const ContactInfo = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   width: 350px;
   height: 100%;
   min-height: 450px;
   border-radius: var(--border-radius-lg);
   padding: 2rem;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color-transparent-7) 0%,
-    var(--primary-color-transparent-7) 20%,
-    var(--primary-color-transparent-7) 70%,
-    var(--secondary-color-transparent-7) 100%
-  );
+  cursor: pointer;
   @media only screen and (max-width: 768px) {
     width: 100%;
     min-height: 250px;

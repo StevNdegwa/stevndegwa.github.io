@@ -2,9 +2,8 @@ import React, { FC, PropsWithChildren, useMemo } from "react";
 import clsx from "clsx";
 import { Wrapper } from "./styles";
 
-export type ButtonProps = React.ButtonHTMLAttributes<
-  HTMLAnchorElement | HTMLButtonElement
-> &
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> &
   PropsWithChildren<
     Partial<{
       color:

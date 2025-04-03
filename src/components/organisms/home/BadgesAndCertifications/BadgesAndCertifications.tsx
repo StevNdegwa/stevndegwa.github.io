@@ -50,7 +50,7 @@ export const BadgesAndCertifications: FC<{ list: BadgeType[] }> = ({
               🥇
             </IconContainer>
           </Text>
-          <FlexBox gap="sm" justify="space-between" wrap>
+          <FlexBox gap="sm" wrap>
             {list.map((badge: BadgeType, index: number) => (
               <Card key={index}>
                 <Card.Title>

@@ -11,7 +11,41 @@ export const ContactMe = forwardRef<HTMLFormElement>(({}, ref) => {
   return (
     <Section>
       <Wrapper>
-        <ContactInfo direction="column" gap="xl">
+        <ContactInfo
+          initial={{
+            background: `linear-gradient(
+            135deg,
+            var(--primary-color-transparent-7) 0%,
+            var(--secondary-color-transparent-7) 10%,
+            var(--secondary-color-transparent-7) 100%
+          )`,
+          }}
+          animate={{
+            background: [
+              `linear-gradient(
+              135deg,
+              var(--primary-color-transparent-7) 0%,
+              var(--primary-color-transparent-7) 60%,
+              var(--secondary-color-transparent-7) 95%,
+              var(--secondary-color-transparent-7) 100%
+            )`,
+              `linear-gradient(
+              135deg,
+              var(--primary-color-transparent-7) 0%,
+              var(--primary-color-transparent-7) 80%,
+              var(--secondary-color-transparent-7) 95%,
+              var(--secondary-color-transparent-7) 100%
+            )`,
+            ],
+          }}
+          transition={{
+            type: "tween",
+            stiffness: 100,
+            duration: 1,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        >
           <FlexBox direction="column" gap="sm">
             <Text heading="h3" weight="medium" size="xl">
               Contact Me

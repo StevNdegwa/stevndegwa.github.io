@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import wall from "@assets/images/Wall.png"
+import wall from "@assets/images/Wall.png";
 import { FlexBox } from "@components/molecules";
+import { motion } from "motion/react";
 
 export const Wrapper = styled(FlexBox)`
   height: 100%;
@@ -12,17 +13,30 @@ export const Stephen = styled.img`
 `;
 
 export const Intro = styled(FlexBox)`
-height: 420px;
-background-image: url('${wall}');
-background-size: auto 100%;
+  height: 420px;
+  background-image: url("${wall}");
+  background-size: auto 100%;
+  @media only screen and (max-width: 768px) {
+    height: 300px;
+  }
+
+  @media only screen and (max-width: 450px) {
+    height: 200px;
+  }
 `;
 
-export const AboutCard = styled.div`
+export const AboutCard = styled(motion.div)`
   width: 578px;
   height: 222px;
   position: relative;
   top: 40px;
   left: 20px;
+  cursor: pointer;
+  @media only screen and (max-width: 600px) {
+    width: 340px;
+    height: 140px;
+    left: 0px;
+  }
   & > div {
     border: none;
     position: absolute;
@@ -107,22 +121,36 @@ export const AboutCard = styled.div`
 `;
 
 export const AboutCardBg = styled.div`
-  background: linear-gradient(to right,  rgba(0,255,56,0.9) 0%, rgba(0,255,56,0.6) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(0, 255, 56, 0.9) 0%,
+    rgba(0, 255, 56, 0.6) 100%
+  );
   z-index: 200;
   width: 590px;
   height: 237px;
   padding-left: 60px;
   padding-top: 40px;
   position: relative;
-  & > p {
-    font-size: 30px;
+  @media only screen and (max-width: 600px) {
+    width: 350px;
+    height: 150px;
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+  & p {
     color: #012444;
     width: 380px;
+
+    @media only screen and (max-width: 600px) {
+      font-size: 18px !important;
+      width: 280px !important;
+    }
   }
-  & > svg{
+  & > svg {
     position: absolute;
-    top:5px;
-    left:8px;
+    top: 5px;
+    left: 8px;
   }
 `;
 
@@ -132,6 +160,11 @@ export const AboutCardShadow = styled.div`
   filter: blur(100px);
   width: 595px;
   height: 243px;
+  @media only screen and (max-width: 600px) {
+    width: 340px;
+    height: 140px;
+    left: 0px;
+  }
 `;
 
 export const AboutCardLink = styled.a`
@@ -144,8 +177,19 @@ export const AboutCardLink = styled.a`
   width: 100px;
   height: 80px;
   border-radius: 25px;
-  background: linear-gradient(to right, rgba(0,255,56,0.7) 0%, rgba(0,255,56,0.6) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(0, 255, 56, 0.7) 0%,
+    rgba(0, 255, 56, 0.6) 100%
+  );
   box-shadow: 5px 5px 4px rgba(1, 36, 68, 0.1);
   color: var(--text-color);
   cursor: pointer;
+  font-size: 3rem;
+  @media only screen and (max-width: 600px) {
+    width: 62px;
+    height: 55px;
+    border-radius: 15px;
+    font-size: 2rem;
+  }
 `;
