@@ -9,15 +9,16 @@ export type ListProps = React.HTMLAttributes<HTMLUListElement> & {
 
 const _List = forwardRef<HTMLUListElement, ListProps>(
   ({ children, loading, ...props }) => {
-    if (loading) {
-      return (
-        <Wrapper as={"div"}>
+    return (
+      <>
+        <Wrapper $show={!!loading} as={"div"}>
           <Loader />
         </Wrapper>
-      );
-    }
-
-    return <Wrapper {...props}>{children}</Wrapper>;
+        <Wrapper $show={!loading} {...props}>
+          {children}
+        </Wrapper>
+      </>
+    );
   }
 );
 
