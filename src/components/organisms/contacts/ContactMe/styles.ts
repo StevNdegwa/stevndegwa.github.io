@@ -3,7 +3,7 @@ import { FlexBox } from "@components/molecules";
 import { motion } from "motion/react";
 import styled, { keyframes } from "styled-components";
 
-export const Wrapper = styled(FlexBox)`
+export const Wrapper = styled(motion.div)`
   width: 100%;
   height: auto;
   padding: 1rem;
@@ -11,6 +11,9 @@ export const Wrapper = styled(FlexBox)`
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--dark-color-transparent-05);
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
 
   @media only screen and (max-width: 768px) {
     flex-direction: column;

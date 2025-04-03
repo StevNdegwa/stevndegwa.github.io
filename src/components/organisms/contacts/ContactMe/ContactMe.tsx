@@ -10,7 +10,21 @@ import { ContactForm, ContactInfo, Fieldset, Wrapper } from "./styles";
 export const ContactMe = forwardRef<HTMLFormElement>(({}, ref) => {
   return (
     <Section>
-      <Wrapper>
+      <Wrapper
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          type: "spring",
+          duration: 0.5,
+          bounce: 0.4,
+        }}
+      >
         <ContactInfo
           initial={{
             background: `linear-gradient(
