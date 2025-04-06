@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, useMemo } from "react";
+import React, { FC, PropsWithChildren, ReactNode, useMemo } from "react";
 import clsx from "clsx";
 import { Wrapper } from "./styles";
 
@@ -19,6 +19,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
       size: "sm" | "md" | "lg";
       variant: "outline" | "fill" | "plain";
       type: string;
+      leftIcon: ReactNode;
     }>
   >;
 
@@ -29,6 +30,8 @@ export const Button: FC<ButtonProps> = ({
   className,
   size,
   variant,
+  type = "button",
+  leftIcon,
   ...props
 }) => {
   const element = useMemo(() => (href ? "a" : "button"), [href]);
@@ -39,13 +42,8 @@ export const Button: FC<ButtonProps> = ({
   });
 
   return (
-    <Wrapper
-      {...props}
-      type="button"
-      as={element}
-      href={href}
-      className={elementClasses}
-    >
+    <Wrapper {...props} as={element} href={href} className={elementClasses}>
+      {leftIcon}
       {children}
     </Wrapper>
   );

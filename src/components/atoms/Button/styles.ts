@@ -17,6 +17,7 @@ export const Wrapper = styled.button`
   text-decoration: none;
   padding: 0 1rem;
   transition: all 0.2s;
+  gap: 0.5rem;
   &.light-primary-bg-color {
     background-color: var(--primary-color-transparent-1);
     color: var(--dark-color);

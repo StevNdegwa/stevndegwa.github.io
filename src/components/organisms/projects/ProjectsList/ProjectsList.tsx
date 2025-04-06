@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import projects_creative from "@assets/images/projects_creative.png";
 import { Section } from "../Section";
 import { DataTagsList, FlexBox, List } from "@components/molecules";
 import { Box, Button, Link, Text } from "@components/atoms";
@@ -34,8 +35,34 @@ export const ProjectsList = () => {
       .finally(() => setLoading(false));
   }, []);
 
+  if (error) {
+    return (
+      <Section>
+        <FlexBox direction="column">
+          <Text textAlign="center">
+            An error occurred, and couldn't load list
+          </Text>
+        </FlexBox>
+      </Section>
+    );
+  }
+
   return (
     <Section>
+      <FlexBox
+        direction="column"
+        gap="sm"
+        style={{
+          backgroundImage: `url(${projects_creative})`,
+          backgroundSize: "auto 100px",
+          backgroundPosition: "right center",
+          padding: "2rem",
+          borderRadius: "1rem",
+          backgroundRepeat: "no-repeat",
+          height: "150px",
+          width: "100%",
+        }}
+      />
       <List loading={loading}>
         {projectsList.map((project) => (
           <List.Item
@@ -47,7 +74,11 @@ export const ProjectsList = () => {
                 title="View on GitHub"
               >
                 <FlexBox direction="row" gap="sm">
-                  <Text weight="bold" transform="uppercase">
+                  <Text
+                    weight="bold"
+                    transform="uppercase"
+                    style={{ maxWidth: "90%", overflowWrap: "break-word" }}
+                  >
                     GitHub/{project.full_name}
                   </Text>
                   <FaExternalLinkAlt />

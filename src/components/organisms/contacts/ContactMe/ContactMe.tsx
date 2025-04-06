@@ -1,13 +1,27 @@
 import React, { forwardRef } from "react";
 import { MdEmail } from "react-icons/md";
+import { BsSendSlashFill, BsSendCheckFill } from "react-icons/bs";
 import { FaSquarePhone, FaLocationDot } from "react-icons/fa6";
-import { Formik } from "formik";
 import { Box, Button, Input, TextArea, Text } from "@components/atoms";
 import { Section } from "../Section";
 import { FlexBox } from "@components/molecules";
-import { ContactForm, ContactInfo, Fieldset, Wrapper } from "./styles";
+import {
+  ContactForm,
+  ContactInfo,
+  Fieldset,
+  FormLoader,
+  Wrapper,
+} from "./styles";
 
 export const ContactMe = forwardRef<HTMLFormElement>(({}, ref) => {
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
+
+  const isDisabled = !name || !email || !message;
+
   return (
     <Section>
       <Wrapper
@@ -91,75 +105,96 @@ export const ContactMe = forwardRef<HTMLFormElement>(({}, ref) => {
             </FlexBox>
           </FlexBox>
         </ContactInfo>
-        <ContactForm>
-          <Formik
-            initialValues={{
-              email: "",
-              message: "",
-              full_name: "",
-            }}
-            onSubmit={({ email, message, full_name }) => {
-              console.log("Email", email);
-              console.log("Message", message);
-              console.log("Full name", full_name);
+        <ContactForm gap="md" direction="column">
+          <form
+            ref={ref}
+            method="POST"
+            name="contact"
+            className="gform"
+            action="https://script.google.com/macros/s/AKfycby2VlvSoHyGRzmxPz8v_bWRlvkb5T45vEarCkkETz0iJHiuIu_fG1LRUzZGbRq6oErtuw/exec"
+            onSubmit={(e) => {
+              e.preventDefault();
+
+              setIsSubmitting(true);
+
+              fetch(e.currentTarget.action, {
+                method: e.currentTarget.method,
+                body: new URLSearchParams(new FormData(e.currentTarget) as any),
+                headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                },
+              })
+                .then((response) => {
+                  if (response.ok) {
+                    setIsSubmitted(true);
+                  } else {
+                    setIsSubmitted(false);
+                  }
+                })
+                .catch((error) => {
+                  console.error("Error submitting form:", error);
+                })
+                .finally(() => {
+                  setIsSubmitting(false);
+                });
             }}
           >
-            {({ values, errors, handleChange, handleBlur, handleSubmit }) => (
-              <form ref={ref} onSubmit={handleSubmit}>
-                <Fieldset>
-                  <legend>
-                    <Text weight="medium" size="lg">
-                      Send a message
-                    </Text>
-                  </legend>
-                  <FlexBox direction="column" gap="sm">
-                    <Box>
-                      <Input
-                        name="full_name"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.full_name}
-                        placeholder="Name"
-                      />
-                      {errors.full_name}
-                    </Box>
-                    <Box>
-                      <Input
-                        name="contact"
-                        placeholder="Email"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.email}
-                      />
-                      {errors.email}
-                    </Box>
-                    <Box>
-                      <TextArea
-                        name="message"
-                        placeholder="Message"
-                        value={values.message}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
-                      {errors.message}
-                    </Box>
-                    <FlexBox gap="md">
-                      <Button type="submit" variant="outline" disabled>
-                        Send Message
-                      </Button>
-                      <Button
-                        href="mailto:sndegwa.n@outlook.com"
-                        variant="outline"
-                        color="dark"
-                      >
-                        Send Email
-                      </Button>
-                    </FlexBox>
-                  </FlexBox>
-                </Fieldset>
-              </form>
-            )}
-          </Formik>
+            <Fieldset>
+              <legend>
+                <Text weight="medium" size="lg">
+                  Send a message
+                </Text>
+              </legend>
+              <FlexBox direction="column" gap="sm">
+                <Box>
+                  <Input
+                    name="full_name"
+                    placeholder="Name"
+                    onChange={(evt) => setName(evt.currentTarget.value)}
+                  />
+                </Box>
+                <Box>
+                  <Input
+                    name="contact"
+                    placeholder="Email"
+                    type="email"
+                    onChange={(evt) => setEmail(evt.currentTarget.value)}
+                  />
+                </Box>
+                <Box>
+                  <TextArea
+                    name="message"
+                    placeholder="Message"
+                    onChange={(evt) => setMessage(evt.currentTarget.value)}
+                  />
+                </Box>
+                <Box>
+                  <Button
+                    type="submit"
+                    variant="outline"
+                    leftIcon={
+                      isDisabled ? (
+                        <BsSendSlashFill size={24} />
+                      ) : (
+                        <BsSendCheckFill size={24} />
+                      )
+                    }
+                    disabled={isDisabled}
+                  >
+                    Send Message
+                  </Button>
+                </Box>
+              </FlexBox>
+            </Fieldset>
+          </form>
+          {isSubmitted && (
+            <FlexBox>
+              <Text weight="bold">Message has been sent</Text>
+            </FlexBox>
+          )}
+          <FormLoader $show={isSubmitting}>
+            <div className="loader" />
+          </FormLoader>
         </ContactForm>
       </Wrapper>
     </Section>
